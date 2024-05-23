@@ -7,7 +7,7 @@ helpers
 // https://www.cdnfonts.com/chicago-2.font;
 // mac os 9 reference - https://www.youtube.com/watch?v=Pxdjhi53B8U
 
-*did the original design in figma, strongly based (copied) from old Mac OS 9 i grew up with. 
+*did the original design in figma, strongly based (copied) from old Mac OS 9 i grew up with.  
 
 
 used chatGPT to ask about BEM since i get confused on how long the class names are suppose to be, how far nested?
