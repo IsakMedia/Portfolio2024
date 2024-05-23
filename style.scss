@@ -1,0 +1,82 @@
+@import url('https://fonts.cdnfonts.com/css/chicago-2');
+
+$background-clr-accent: #989ACD;
+$background-clr-grey:#D8D8D8;
+$lighter-grey:#D9D9D9;
+$dark-grey:#3A3A3A;
+$pure-white:#fff;
+$pure-black:#000;
+
+body {
+    font-family: 'Chicago', sans-serif;
+    padding:0;
+    margin:0;
+    min-height:100dvh;
+    width:100%;
+
+   
+}
+
+main {
+   background-color: $background-clr-accent;
+   min-height:100dvh;
+   width:100%;
+   
+
+   .window {
+    margin:0 10px;
+    padding:30px 0;
+   }
+ 
+
+   .window__header {
+        background-color: $background-clr-grey;
+        border:1px solid $dark-grey;
+        height:10vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h2 {
+            font-size: 1.1rem;
+            font-style: normal;
+            font-stretch: expanded;
+        }
+
+
+     .window__header__btn {
+        margin:10px;
+        height:25px;
+        width:25px;
+        border:1px solid black;
+
+        &--close {
+
+        }
+
+        &--expand {
+
+        }
+    }
+
+    .window__header__line-box {
+        display: flex;
+        flex-direction: column;
+    
+        
+        .line-box__line {
+            margin:1px;
+            width:50px;
+            height:1px;
+            border:none;
+            background-color: #888888;
+            border-bottom: 1px solid rgb(241, 241, 241);
+
+        }
+
+    }
+
+        
+        
+   }
+}
