@@ -1,4 +1,59 @@
 @import url("https://fonts.cdnfonts.com/css/chicago-2");
+.about__about-container {
+  width: 60%;
+  margin: 0 auto;
+  color: black;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.about__about-container > * {
+  flex: 1;
+}
+.about__image-box {
+  border: 2px solid black;
+  box-shadow: 10px 10px 0px -5px rgb(0, 0, 0);
+  background-color: white;
+  padding: 10px;
+  flex: 1;
+}
+.about__image-box__profile-box {
+  background-color: #D8D8D8;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+}
+.about__info-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background-color: white;
+  padding: 10px;
+  border: 2px solid black;
+  box-shadow: 10px 10px 0px -5px rgb(0, 0, 0);
+}
+.about__info-box ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.about__info-box__btn {
+  align-self: flex-start;
+  font-size: 1rem;
+  font-family: "Chicago", sans-serif;
+  background-color: white;
+  border-radius: 0.4rem;
+  padding: 3px 20px;
+  border: 1px solid black;
+  box-shadow: 0px 2px 0px 1px rgb(0, 0, 0);
+  left: 0;
+}
+.about__info-box__btn:active {
+  box-shadow: inset 0px 2px 0px 1px rgba(0, 0, 0, 0.7);
+  font-size: calc(1rem - 5%);
+}
+
 body {
   font-family: "Chicago", sans-serif;
   padding: 0;
@@ -17,7 +72,7 @@ main {
 }
 main .window {
   min-width: 320px;
-  margin: 0 1rem;
+  margin: 1rem;
   background-color: #D8D8D8;
   outline: 1px solid rgb(0, 0, 0);
   padding-bottom: 10px;
@@ -74,7 +129,6 @@ main .window .window__header .window__header__btn--expand::before {
   left: -7px;
   height: 10px;
   width: 10px;
-  background: rgb(203, 203, 203);
   border: 1px solid black;
   box-shadow: -1px -1px 0px 0.1px rgba(81, 81, 81, 0.8), 1px 1px 0px 0.1px rgb(255, 255, 255);
 }
@@ -116,47 +170,6 @@ main .window .window__body p {
 
 @media (min-width: 600px) {
   main .window {
-    margin: 0 3rem;
+    margin: 3rem;
   }
-}
-.about__about-container {
-  display: flex;
-  gap: 10px;
-}
-.about__about-container > * {
-  flex: 1;
-}
-.about__image-box {
-  border: 2px solid black;
-  box-shadow: 15px 15px 0px -10px rgb(0, 0, 0);
-  background-color: white;
-  padding: 10px;
-}
-.about__image-box__profile-box {
-  background-color: #D8D8D8;
-}
-.about__image-box img {
-  display: inline-block;
-}
-.about__info-box {
-  background-color: white;
-  padding: 10px;
-  border: 2px solid black;
-  box-shadow: 15px 15px 0px -10px rgb(0, 0, 0);
-}
-.about__info-box ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-.about__info-box__btn {
-  font-family: "Chicago", sans-serif;
-  background-color: white;
-  border-radius: 0.4rem;
-  padding: 7px 14px;
-  border: 1px solid black;
-  box-shadow: 0px 2px 0px 1px rgb(0, 0, 0);
-}
-.about__info-box__btn:active {
-  box-shadow: inset 0px 2px 0px 1px rgba(0, 0, 0, 0.7);
 }/*# sourceMappingURL=style.css.map */

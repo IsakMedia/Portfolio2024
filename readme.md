@@ -32,4 +32,8 @@ im guessing i need to do some x-pos y-pos with javascript to drag em around. sho
 or should it overlap. i need to think about it.
 id really like if one feature would be that if you expand one of the windows, ive hidden easter eggs off screen.
 
+// should the expand button make the window collapse at place itself on top of upper window?
+// should it work by placing it with position:relative top:0, or do i have to use javascript to find the lower boundingrect?
+
+
 
