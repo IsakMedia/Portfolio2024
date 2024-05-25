@@ -35,7 +35,6 @@ main {
    .window__header {
         background-color: $clr-background-grey;
         display: flex;
-        justify-content: space-between;
         align-items: center;
         padding-inline:10px;
 
@@ -54,51 +53,49 @@ main {
         }
 
     .btn-border-wrapper {
-        border:1px solid black;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 99;
         height:25px;
         width:25px;
-        position: relative;
+        border:1px solid black;
+        box-shadow: 
+             -1px -1px 0px 0.1px rgba(81, 81, 81, 0.8),
+             1px 1px 0px 0.1px rgb(255, 255, 255),
+        ;     
     }
 
      .window__header__btn {
         background: rgb(255,255,255);
         background: linear-gradient(315deg, rgba(255,255,255,1) 0%, rgb(105, 105, 105) 100%);
         height:25px;
-        width:25px;
-        // outline:1px solid black;
-        // outline-offset: -2px;
-        border-top:2px solid black;
-        border-left:2px solid black;
-        border-right:2px solid white;
-        border-bottom:2px solid white;
-
+        width:25px;       
         flex: 0 0 auto;
-        // x, y, blur, spread, opacity 
-        box-shadow: 
-            inset -2px -2px 0px 0.1px rgb(137, 137, 137,0.8),
-            inset 2px 2px 0px 0.1px rgba(255, 255, 255, 1),
-        ;
         position: relative;
        
 
         &--close {
-            margin-right:5px;
-
-        }
-
-        &--expand {
-            margin-left:5px;
-
             &::before {
                 content:'';
                 display: inline-block;
-                border:1px solid rgb(0, 0, 0);
+            }
+        }
+
+        &--expand {
+            &::before {
+                content:'';
+                display: inline-block;
                 position: relative;
-                top:-6px;
-                left:-6px;
+                top:-7px;
+                left:-7px;
                 height:10px;
                 width:10px;
-                box-shadow: inset 6px 6px 4px -4px rgba(0,0,0,0.3);
+                border:1px solid black;
+                box-shadow: 
+                -1px -1px 0px 0.1px rgba(81, 81, 81, 0.8),
+                1px 1px 0px 0.1px rgb(255, 255, 255);    
                 
             }
         }
@@ -109,6 +106,7 @@ main {
         flex:1;
         flex-direction: column;
         width:100%;
+        margin:0 5px;
         
         .line-box__line {
             flex-shrink: 1;

@@ -9,6 +9,8 @@ helpers
 
 *did the original design in figma, strongly based (copied) from old Mac OS 9 i grew up with.  
 
+could i do a vanilla js webcomponent? 
+
 
 used chatGPT to ask about BEM since i get confused on how long the class names are suppose to be, how far nested?
 used chatGPT to get mediequeries for mobile first because i forgot the syntax.
