@@ -7,6 +7,9 @@
 * <https://box-shadow.dev/>
 * <https://www.cdnfonts.com/chicago-2.font>;
 * mac os 9 reference - <https://www.youtube.com/watch?v=Pxdjhi53B8U>
+* can i keep using scss for webcomponents?
+<https://dev.to/m4thieulavoie/how-i-managed-to-use-scss-inside-web-components-3lk9>
+<https://medium.com/swlh/web-components-with-shadow-dom-and-sass-f780ad23dd90>
 
 * Did the original design in figma, strongly based (copied) from old Mac OS 9 i grew up with.  
 
@@ -16,7 +19,9 @@ probably not the latter. ill get to it soon
 
 * setting up and watching sass on my laptop created a style.min.css and was dependent on it to read the scss in
 index.html. wonder if im using different extensions or whats up. this might be a somewhat inconvenience when
-switching between computers. so maybe i solve this some day. Anyways something to remember, to save myself from frustration
+switching between computers. so maybe i solve this some day. Anyways something to remember, to save myself from frustration.
+
+* maybe i cant use scss as i want to, or webcomponents. im not sure yet. I really didnt want to use any npm packages for this project, keeping everything as "vanilla" as possible (except for sass, gotta have sass). Maybe this project will get me closer to understand the usefullness of bundlers and maybe wth webpack is?
 
 ## What am i using ChatGPT for?
 
