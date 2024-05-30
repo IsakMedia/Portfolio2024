@@ -20,7 +20,7 @@ macOsTemplate.innerHTML = `
                         <hr class="line-box__line">
                     </div>
                         <h2>
-                        <slot name="title">title on window header</slot>
+                        <slot name="title"></slot>
                         </h2>
 
                         <div class="window__header__line-box">
@@ -40,12 +40,12 @@ macOsTemplate.innerHTML = `
                 <div class="window__body">
                     <h3>
                     <slot name="subheading">
-                    Här är en subheading från componenten
+                   
                     </slot>
                     </h3>
                     <p>
                     <slot name="paragraph">
-                    här har jag text från componenten i paragraph slot.
+                   
                     </slot>
                     </p>
                 </div>
