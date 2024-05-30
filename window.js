@@ -1,14 +1,12 @@
-
+ 
 const macOsTemplate = document.createElement('template');
 macOsTemplate.innerHTML = `
 <style> 
 
-:host(window-mac) {
-    @import './style.min.css';
-}
-
+@import url('./style.min.css');
 </style>
-<div class="window">
+ <main>
+            <div class="window">
                 <div class="window__header">
                     <div class="btn-border-wrapper">
                         <button class="window__header__btn window__header__btn--close"></button>
@@ -22,7 +20,7 @@ macOsTemplate.innerHTML = `
                         <hr class="line-box__line">
                     </div>
                         <h2>
-                        <slot name="title">place a h2 heading here</slot>
+                        <slot name="title">title on window header</slot>
                         </h2>
 
                         <div class="window__header__line-box">
@@ -42,31 +40,34 @@ macOsTemplate.innerHTML = `
                 <div class="window__body">
                     <h3>
                     <slot name="subheading">
-                    Hej@isakmedia.se
+                    Här är en subheading från componenten
                     </slot>
                     </h3>
                     <p>
                     <slot name="paragraph">
+                    här har jag text från componenten i paragraph slot.
                     </slot>
                     </p>
                 </div>
             </div>
-
+</main>
 
 `;
-
 
 
 class WindowMacOs extends HTMLElement {
     constructor(){
         super();
         const shadowroot = this.attachShadow({mode:'open'});
-        
+
         let clone = macOsTemplate.content.cloneNode(true);
         shadowroot.append(clone);
-        
-    }
+  
+}
 
+    static get observedAttributes(){
+        return ['title', "subheading", "paragraph"]
+    }
 }
 
 

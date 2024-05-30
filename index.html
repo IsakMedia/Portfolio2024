@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IsakMedia</title>
-    <link rel="stylesheet" href="style.min.css">
+    <!-- <link rel="stylesheet" href="./style.min.css"> -->
     
 </head>
 <body>
     <main>
         <section class="contact">
             <div class="window">
-                <div class="window__header">
+               <div class="window__header">
                     <div class="btn-border-wrapper">
                         <button class="window__header__btn window__header__btn--close"></button>
                     </div>
@@ -47,7 +47,7 @@
         </section>
 
 
-        <section class="contact">
+         <section class="contact">
             <div class="window">
                 <div class="window__header">
                     <div class="btn-border-wrapper">
@@ -76,8 +76,8 @@
                     
                 </div>
                     
-                <div class="window__body">
-                    <!-- <h3>Hej@isakmedia.se</h3> -->
+                <div class="window__body"> 
+                    <h3>Hej@isakmedia.se</h3>
                     
                     <section class="about">
                        
@@ -107,9 +107,12 @@
         </section>
        
         <window-mac>
-            <h2 slot="title">contact</h2>
-            <h3 slot="subheading">hej@isakmedia</h3>
-            <p slot="paragraph">fritext</p>
+            <div class="window">
+
+                <h2 slot="title"></h2>
+                <h3 slot="subheading">subhead</h3>
+                <p slot="paragraph">para</p>
+            </div>
         </window-mac>
     </main>
     
