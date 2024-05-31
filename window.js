@@ -4,6 +4,13 @@ macOsTemplate.innerHTML = `
 <style> 
 
 @import url('./style.min.css');
+
+
+::slotted([slot="lead"]) {
+    font-style:italic;
+  }
+
+
 </style>
  <main>
             <div class="window">
@@ -20,7 +27,7 @@ macOsTemplate.innerHTML = `
                         <hr class="line-box__line">
                     </div>
                         <h2>
-                        <slot name="title"></slot>
+                        <slot name="heading">should be replaced</slot>
                         </h2>
 
                         <div class="window__header__line-box">
@@ -40,9 +47,10 @@ macOsTemplate.innerHTML = `
                 <div class="window__body">
                     <h3>
                     <slot name="subheading">
-                   
+                    should be replaced
                     </slot>
                     </h3>
+                    <slot name="lead"></slot>
                     <p>
                     <slot name="paragraph">
                    
@@ -66,7 +74,22 @@ class WindowMacOs extends HTMLElement {
 }
 
     static get observedAttributes(){
-        return ['title', "subheading", "paragraph"]
+        return ['heading', "subheading", "paragraph", "lead"]
+    }
+
+    get heading(){
+        return this.getAttribute('heading');
+    };
+    set heading(value) {
+        this.setAttribute("heading", value )
+    };
+    get subheading(){};
+    get paragraph(){};
+    get lead(){}; 
+
+
+    attributeChangedCallback(attrname, oldVal, newVal){
+
     }
 }
 

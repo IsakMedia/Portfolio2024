@@ -14,7 +14,17 @@ $box-shadow-components: 10px 10px 0px -5px rgba(0, 0, 0, 1);
     font-family: 'Chicago', sans-serif;
     box-sizing: border-box;
     background-color: $clr-background-accent;
+
+    a {
+        color: black;
+
+        &:active {
+            color: $clr-dark-grey;
+        }
+
+    }
 }
+
 
 body {
     padding: 0;
@@ -160,6 +170,8 @@ main {
             p {
                 font-size: 1rem;
                 margin: 0;
+                line-height: 1.5rem;
+
             }
 
 
