@@ -8,7 +8,7 @@
 </head>
 <body>
     <main>
-        <section class="contact">
+        <!-- <section class="contact">
             <div class="window">
                 <div class="window__header">
                     <div class="btn-border-wrapper">
@@ -56,8 +56,8 @@
                     </section>
                 </div>
             </div>
-        </section>
-        <window-mac heading="about" subheading="Whom am i?">
+        </section> -->
+        <!-- <window-mac heading="about" subheading="Who am i?">
            
             <p slot="lead">
                 TL;DR: A middle aged balding guy who is strangely still curious about life. He likes scss,  accessibility, javascript and A.I. 
@@ -84,9 +84,9 @@
             <p slot="paragraph">
                 Get in <a href="#">touch!</a>
             </p>
-        </window-mac>
+        </window-mac> -->
        
-
+<!-- 
         <window-mac heading="isak" subheading="find me here!" wintype="paragraph"/"imagebox">
             <p slot="lead">
                 TL;DR: A middle aged balding guy who is strangely still curious about life. He likes scss,  accessibility, javascript and A.I. 
@@ -98,15 +98,23 @@
             </p>
 
            
+        </window-mac> -->
+
+        <!-- display-box sets display flex and gives each child a shadow like in figma design -->
+        <window-mac heading="image-box" box-type="display-box">
+            <image-box src="./src/images/isak.png" alt="hello"></image-box>
+            <list-box name="isak" age="35", status="broke" location="malmö"></list-box>    
         </window-mac>
 
-        <window-mac>
-            <image-box src="./src/images/isak.png" alt="hello"></image-box>
+         <!-- text-box sets a different margin on text-container -->
+        <window-mac heading="about" box-type="text-box">
+           <p slot="paragraph"></p>
         </window-mac>
         
     </main>
     <script src="./script.js" type="module"></script>
     <script src="./window.js" type="module"></script>
     <script src="./imagebox.js" type="module"></script>
+    <script src="./paragraph.js" type="module"></script>
 </body>
 </html>

@@ -42,6 +42,8 @@ class ImageBox extends HTMLElement {
         return ['src','alt']
     }
 
+    
+
     get imgSrc(){
         return this.getAttribute('src')
     };
@@ -72,3 +74,6 @@ class ImageBox extends HTMLElement {
 
     
 }
+
+
+customElements.define('image-box', ImageBox);

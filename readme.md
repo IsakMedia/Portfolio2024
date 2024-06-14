@@ -57,3 +57,20 @@ it aint that funny even though i think it for the moment. i wonder if there are
 any humor calculators out there. maybe i can run it on my page aswell. yeah ok
 maybe not, but id like to have some dynamic text content from an open api.
 hmm, dont know if i want it to be hidden or in the source-code just like an easter eggs. i do love easter eggs.
+
+### what am i doing?
+
+* realizing how much i like typescript with all those mental gymnastics im doing
+
+* realizing the important of planning what you want your components to do before you stir sh*t up.
+
+* why am i like this?
+
+* what an absolute nightmare this has become
+-i need to blame someone..or something.. yooohooo chatGPT, whats up little buddy?
+-it told me ive missunderstood everything.
+-thanks obama.
+-^ is that still a meme people remembers?
+-anyways, next time i wont do the css first, or ill google before hand if sass could be a problem
+-are you trying to blame sass for this?
+-i guess.

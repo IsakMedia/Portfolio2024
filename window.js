@@ -1,6 +1,6 @@
  
-const macOsTemplate = document.createElement('template');
-macOsTemplate.innerHTML = `
+const paragraphTemp = document.createElement('template');
+paragraphTemp.innerHTML = `
 <style> 
 
 
@@ -42,23 +42,13 @@ macOsTemplate.innerHTML = `
             
         </div>
             
-        <div class="window__body">
-            <h3>
-            <slot name="subheading">
-            should be replaced
-            </slot>
-            </h3>
-            <slot name="lead"></slot>
-            <p>
-            <slot name="paragraph">
-            
-            </slot>
-            </p>
-        </div>
 
-        <div class="window__body>
-        <slot name="imagebox"></slot>
-        </div>
+        
+        <slot name="image-box"></slot>
+        
+        <slot name="paragraph-comp"></slot>
+
+
 
         
     </div>
@@ -72,12 +62,12 @@ class WindowMacOs extends HTMLElement {
         super();
         const shadowroot = this.attachShadow({mode:'open'});
 
-        let clone = macOsTemplate.content.cloneNode(true);
+        let clone = paragraphTemp.content.cloneNode(true);
         shadowroot.append(clone);
     }
 
     static get observedAttributes(){
-        return ['heading', "subheading", "paragraph","imagebox", "lead", "imagebox"]
+        return ['heading', "subheading"]
     }
 
     // find the attribute of heading in the dom-tree
@@ -97,27 +87,7 @@ class WindowMacOs extends HTMLElement {
     set subheading(value){
         this.setAttribute('subheading', value);
     }
-    get paragraph(){
-        return this.getAttribute("paragraph")
-    };
-    set paragraph(value){
-        this.setAttribute('paragraph', value)
-    };
-    get lead(){
-        return this.getAttribute('paragraph')
-    }; 
-    set lead(value) {
-        this.setAttribute('lead', value)
-    }
-
-    get imagebox(){
-        return this.getAttribute('imagebox');
-    };
-    // 
-    set imagebox(value) {
-        this.setAttribute("imagebox", value )
-    };
-
+   
     attributeChangedCallback(attributeName, oldVal, newVal){
 
      if(attributeName.toLowerCase() === "heading"){
@@ -129,15 +99,8 @@ class WindowMacOs extends HTMLElement {
         this.shadowRoot.querySelector('h3').textContent = newVal;
      } 
 
-     // This one will crash with the other P. find a solution
-     if(attributeName.toLowerCase()==="lead") {
-        this.shadowRoot.querySelector('p').textContent = newVal;
-     } 
+}
 
-     if(attributeName.toLowerCase()==="paragraph") {
-        this.shadowRoot.querySelector('p').textContent = newVal;
-     } 
-    }
 }
 
                  
