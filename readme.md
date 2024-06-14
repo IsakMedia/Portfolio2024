@@ -51,3 +51,9 @@ id really like if one feature would be that if you expand one of the windows, iv
 
 * should the expand button make the window collapse at place itself on top of upper window?
 * should it work by placing it with position:relative top:0, or do i have to use javascript to find the lower boundingrect?
+
+* should add a margin of error for my jokes to multiply with. Maybe
+it aint that funny even though i think it for the moment. i wonder if there are
+any humor calculators out there. maybe i can run it on my page aswell. yeah ok
+maybe not, but id like to have some dynamic text content from an open api.
+hmm, dont know if i want it to be hidden or in the source-code just like an easter eggs. i do love easter eggs.

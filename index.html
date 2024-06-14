@@ -57,15 +57,14 @@
                 </div>
             </div>
         </section>
-        <window-mac>
-            <h2 slot="heading">about</h2>
-            <h3 slot="subheading">about me</h3>
+        <window-mac heading="about" subheading="Whom am i?">
+           
             <p slot="lead">
                 TL;DR: A middle aged balding guy who is strangely still curious about life. He likes scss,  accessibility, javascript and A.I. 
                 <br>( I asked an A.I to shorten my text for me and it did a really good job. But i thought this was funnier) 
             </p>
             <p slot="paragraph">
-                Hello, I’m a middle-aged, balding guy who, surprise to surprise, is aiming to be a developer. Some (my degree) may say I already am. Either way, I am a natural creative, an unnatural designer, and a born-again coder, who value play a lot. It is important for me that at least some of my life has space for play, of any kind. It’s what makes coding especially exciting to me. It’s like a new toy or tool that extends my creative outlet. I’m really happy to have it under my belt, even though that might be an overstatement 🙂 (Dunning-Kruger called and wanted their imposter syndrome back).
+                Hello, I’m a middle-aged, balding guy who, surprise to surprise, is aiming to be a developer. Some (my degree) may say I already am. Either way, I am a natural creative, an unnatural designer, and a born-again coder, who value play a lot. It is important for me that at least some of my life has space for play, of any kind. It’s what makes coding especially exciting to me. It’s like a new toy or tool that extends my creative outlet. I’m really happy to have it under my belt, even though that might be an overstatement 🙂 (Dunning-Kruger called and said, its ok you can keep our imposter syndrome).
             </p>
             <p slot="paragraph">
                 In my studies, we covered the core basics of HTML, CSS, JavaScript, Node.js, and React. We also dipped our toes into UX and had a day each in the Adobe Suite and Figma. Post-graduation, I’m diving deeper into vanilla JavaScript, trying to understand how things work under the hood of features you get right of the bat from the next cool new JS framework.
@@ -86,14 +85,28 @@
                 Get in <a href="#">touch!</a>
             </p>
         </window-mac>
+       
+
+        <window-mac heading="isak" subheading="find me here!" wintype="paragraph"/"imagebox">
+            <p slot="lead">
+                TL;DR: A middle aged balding guy who is strangely still curious about life. He likes scss,  accessibility, javascript and A.I. 
+                <br>( I asked an A.I to shorten my text for me and it did a really good job. But i thought this was funnier) 
+            </p>
+
+            <p slot="paragraph">
+                this should contain styling for the info-box placing images in squares inline
+            </p>
+
+           
+        </window-mac>
 
         <window-mac>
-            <h2 slot="heading">contact</h2>
-            <h3 slot="subheading">Hej@isakmedia.se</h3>
+            <image-box src="./src/images/isak.png" alt="hello"></image-box>
         </window-mac>
         
     </main>
     <script src="./script.js" type="module"></script>
     <script src="./window.js" type="module"></script>
+    <script src="./imagebox.js" type="module"></script>
 </body>
 </html>
