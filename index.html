@@ -8,61 +8,14 @@
 </head>
 <body>
     <main>
-        <!-- <section class="contact">
-            <div class="window">
-                <div class="window__header">
-                    <div class="btn-border-wrapper">
-                        <button class="window__header__btn window__header__btn--close"></button>
-                    </div>
-                    <div class="window__header__line-box">
-                        <hr class="line-box__line">
-                        <hr class="line-box__line">
-                        <hr class="line-box__line">
-                        <hr class="line-box__line">
-                        <hr class="line-box__line">
-                        <hr class="line-box__line">
-                    </div>
-                    <h2>About</h2>
-                    <div class="window__header__line-box">
-                        <hr class="line-box__line">
-                        <hr class="line-box__line">
-                        <hr class="line-box__line">
-                        <hr class="line-box__line">
-                        <hr class="line-box__line">
-                        <hr class="line-box__line">
-                    </div>
-                    <div class="btn-border-wrapper">
-                        <button class="window__header__btn window__header__btn--expand"></button>
-                    </div>
-                </div>
-                <div class="window__body"> 
-                    <section class="about">
-                        <div class="about__about-container">
-                            <div class="about__image-box">
-                                <div class="about__image-box__profile-box">
-                                    <img src="./src/images/isak.png" alt="Isak's profile picture"/>
-                                </div>
-                            </div>
-                            <div class="about__info-box">
-                                <ul>
-                                    <li>Name: Isak</li>
-                                    <li>Age: 35</li>
-                                    <li>Status: Broke</li>
-                                    <li>Location: Malmö</li>
-                                </ul>
-                                <button class="about__info-box__btn">Contact</button>    
-                            </div>
-                        </div>
-                    </section>
-                </div>
-            </div>
-        </section> -->
-        <!-- <window-mac heading="about" subheading="Who am i?">
+       
+        <window-mac heading="about" subheading="Who am i?">
            
             <p slot="lead">
                 TL;DR: A middle aged balding guy who is strangely still curious about life. He likes scss,  accessibility, javascript and A.I. 
                 <br>( I asked an A.I to shorten my text for me and it did a really good job. But i thought this was funnier) 
             </p>
+
             <p slot="paragraph">
                 Hello, I’m a middle-aged, balding guy who, surprise to surprise, is aiming to be a developer. Some (my degree) may say I already am. Either way, I am a natural creative, an unnatural designer, and a born-again coder, who value play a lot. It is important for me that at least some of my life has space for play, of any kind. It’s what makes coding especially exciting to me. It’s like a new toy or tool that extends my creative outlet. I’m really happy to have it under my belt, even though that might be an overstatement 🙂 (Dunning-Kruger called and said, its ok you can keep our imposter syndrome).
             </p>
@@ -84,37 +37,19 @@
             <p slot="paragraph">
                 Get in <a href="#">touch!</a>
             </p>
-        </window-mac> -->
+        </window-mac>
        
-<!-- 
-        <window-mac heading="isak" subheading="find me here!" wintype="paragraph"/"imagebox">
-            <p slot="lead">
-                TL;DR: A middle aged balding guy who is strangely still curious about life. He likes scss,  accessibility, javascript and A.I. 
-                <br>( I asked an A.I to shorten my text for me and it did a really good job. But i thought this was funnier) 
-            </p>
-
-            <p slot="paragraph">
-                this should contain styling for the info-box placing images in squares inline
-            </p>
-
-           
-        </window-mac> -->
+        
 
         <!-- display-box sets display flex and gives each child a shadow like in figma design -->
-        <window-mac heading="image-box" box-type="display-box">
-            <image-box src="./src/images/isak.png" alt="hello"></image-box>
-            <list-box name="isak" age="35", status="broke" location="malmö"></list-box>    
+        <window-mac heading="image-box" >
+            
+           
+            
         </window-mac>
 
-         <!-- text-box sets a different margin on text-container -->
-        <window-mac heading="about" box-type="text-box">
-           <p slot="paragraph"></p>
-        </window-mac>
         
     </main>
     <script src="./script.js" type="module"></script>
-    <script src="./window.js" type="module"></script>
-    <script src="./imagebox.js" type="module"></script>
-    <script src="./paragraph.js" type="module"></script>
 </body>
 </html>

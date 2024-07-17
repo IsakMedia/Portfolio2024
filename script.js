@@ -1,6 +1,11 @@
+import * as windowMac from './window.js';
+
+
+
+
+
 
 console.log("yooo");
 
 
 
-customElements.define('image-box', ImageBox);

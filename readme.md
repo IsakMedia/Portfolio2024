@@ -74,3 +74,58 @@ hmm, dont know if i want it to be hidden or in the source-code just like an east
 -anyways, next time i wont do the css first, or ill google before hand if sass could be a problem
 -are you trying to blame sass for this?
 -i guess.
+
+
+
+
+### boiler-plate html for later use
+
+<section class="contact">
+            <div class="window">
+                <div class="window__header">
+                    <div class="btn-border-wrapper">
+                        <button class="window__header__btn window__header__btn--close"></button>
+                    </div>
+                    <div class="window__header__line-box">
+                        <hr class="line-box__line">
+                        <hr class="line-box__line">
+                        <hr class="line-box__line">
+                        <hr class="line-box__line">
+                        <hr class="line-box__line">
+                        <hr class="line-box__line">
+                    </div>
+                    <h2>About</h2>
+                    <div class="window__header__line-box">
+                        <hr class="line-box__line">
+                        <hr class="line-box__line">
+                        <hr class="line-box__line">
+                        <hr class="line-box__line">
+                        <hr class="line-box__line">
+                        <hr class="line-box__line">
+                    </div>
+                    <div class="btn-border-wrapper">
+                        <button class="window__header__btn window__header__btn--expand"></button>
+                    </div>
+                </div>
+                <div class="window__body"> 
+                    <section class="about">
+                        <div class="about__about-container">
+                            <div class="about__image-box">
+                                <div class="about__image-box__profile-box">
+                                    <img src="./src/images/isak.png" alt="Isak's profile picture"/>
+                                </div>
+                            </div>
+                            <div class="about__info-box">
+                                <ul>
+                                    <li>Name: Isak</li>
+                                    <li>Age: 35</li>
+                                    <li>Status: Broke</li>
+                                    <li>Location: Malmö</li>
+                                </ul>
+                                <button class="about__info-box__btn">Contact</button>    
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>  
