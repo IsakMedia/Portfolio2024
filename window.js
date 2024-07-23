@@ -1,12 +1,15 @@
  
+
+let source = ""
+
 const imageBoxTemp = document.createElement('template');
 imageBoxTemp.innerHTML=`
-            <slot name="image-box">
+            
                 <section class="about">
                     <div class="about__about-container">
                         <div class="about__image-box">
                             <div class="about__image-box__profile-box">
-                                <img src="./src/isak.png"/>
+                                <slot name="img-src"><img src="${source}"/> </slot>
                             </div>
                         </div>
                         <div class="about__info-box">
@@ -20,7 +23,7 @@ imageBoxTemp.innerHTML=`
                         </div>
                     </div>
                 </section>
-            </slot>`;
+            `;
 
 const windowTemp = document.createElement('template');
 windowTemp.innerHTML = `
@@ -100,7 +103,7 @@ class WindowMacOs extends HTMLElement {
     }
 
     static get observedAttributes(){
-        return ['heading', "subheading", "lead", "paragraph", "image-box"]
+        return ['heading', "subheading", "lead", "paragraph", "img"]
     }
 
     // find the attribute of heading in the dom-tree
@@ -136,6 +139,14 @@ class WindowMacOs extends HTMLElement {
     set paragraph(value){
         this.setAttribute('paragraph', value)
     };
+
+    get img() {
+        return this.getAttribute("img")
+    }
+
+    set img(value) {
+        this.setAttribute("img", value)
+    }
  
 
     attributeChangedCallback(attributeName, oldVal, newVal){
@@ -155,6 +166,13 @@ class WindowMacOs extends HTMLElement {
      if(attributeName.toLowerCase()==="paragraph") {
         this.shadowRoot.querySelector('p').textContent = newVal;
      } 
+
+     // not sure how this works. 
+     if(attributeName.toLowerCase() ==="img"){
+        this.shadowRoot.querySelector("img").setAttribute('src',newVal);
+        source = `${newVal}`
+
+     }
     }
 
 }

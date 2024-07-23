@@ -57,6 +57,7 @@ it aint that funny even though i think it for the moment. i wonder if there are
 any humor calculators out there. maybe i can run it on my page aswell. yeah ok
 maybe not, but id like to have some dynamic text content from an open api.
 hmm, dont know if i want it to be hidden or in the source-code just like an easter eggs. i do love easter eggs.
+ (update) i do not remember what i mean by this anymore. but i do like dynamic content. so i agree with myself there.
 
 ### what am i doing?
 
@@ -75,8 +76,9 @@ hmm, dont know if i want it to be hidden or in the source-code just like an east
 -are you trying to blame sass for this?
 -i guess.
 
-
-
+* throw out everything, start over. simple down the components.
+-havent figuered out if there is a limitation in web-components making it hard to put a component inside another component or if i just dont understand basic JS.
+ anyways. time to push for deployment, and update stuff later
 
 ### boiler-plate html for later use
 
@@ -107,7 +109,7 @@ hmm, dont know if i want it to be hidden or in the source-code just like an east
                         <button class="window__header__btn window__header__btn--expand"></button>
                     </div>
                 </div>
-                <div class="window__body"> 
+                <div class="window__body">
                     <section class="about">
                         <div class="about__about-container">
                             <div class="about__image-box">
@@ -122,10 +124,31 @@ hmm, dont know if i want it to be hidden or in the source-code just like an east
                                     <li>Status: Broke</li>
                                     <li>Location: Malmö</li>
                                 </ul>
-                                <button class="about__info-box__btn">Contact</button>    
+                                <button class="about__info-box__btn">Contact</button>
                             </div>
                         </div>
                     </section>
                 </div>
             </div>
         </section>  
+
+## if attribute is added. example "image-box"
+
+attributeChangeCallback(name, oldVal, newVal){
+    if(newVal ==="null") {
+        // if theres no attribute named "img" it will return "null"
+        so if null, do nothing.
+    } else {
+        // if added, get reference to instance of class, look for attribute "src"
+        const newImg = document.createElement("img")
+        newImg.setAttribute("img", value)
+        // maybe i need to use this. here to get the current value of components img attribute
+    }
+}
+
+<window-mac img="./isak.jpg">
+
+setAttribute
+
+img.setAttribute gives the element an attribute either way.
+getAttribute gets the value of an attribute. if theres no attribute of said name, it returns null
