@@ -152,3 +152,8 @@ setAttribute
 
 img.setAttribute gives the element an attribute either way.
 getAttribute gets the value of an attribute. if theres no attribute of said name, it returns null
+
+maybe by moving   imageBoxTemp.content.cloneNode(true); and attach it to empty divs in windowsTemp
+i can create a condition to render it. and it maybe should be placed within a livescycle method in web components
+to render in at different times with different conditions met. but this messes with scope. so look into it.
+maybe do as claude suggested and make a loop to get a hold of all gets and sets. think about it will ya
