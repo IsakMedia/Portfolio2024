@@ -1,109 +1,59 @@
- 
+ import {windowTemp, imageBoxTemp} from './templates.js'
 
-let source = ""
-
-const imageBoxTemp = document.createElement('template');
-imageBoxTemp.innerHTML=`
-            
-                <section class="about">
-                    <div class="about__about-container">
-                        <div class="about__image-box">
-                            <div class="about__image-box__profile-box">
-                                <slot name="img-src"><img src="${source}"/> </slot>
-                            </div>
-                        </div>
-                        <div class="about__info-box">
-                                <ul>
-                                    <li>Name: Isak</li>
-                                    <li>Age: 35</li>
-                                    <li>Status: Broke</li>
-                                    <li>Location: Malmö</li>
-                                </ul>
-                                <button class="about__info-box__btn">Contact</button>    
-                        </div>
-                    </div>
-                </section>
-            `;
-
-const windowTemp = document.createElement('template');
-windowTemp.innerHTML = `
-<style> 
-
-
-::slotted([slot="lead"]) {
-    font-style:italic;  
-  }
-
-</style>
-<link rel=stylesheet href="./style.min.css">
-<main>
-    <div class="window">
-        <div class="window__header">
-            <div class="btn-border-wrapper">
-                <button id="closeBtn" class="window__header__btn window__header__btn--close"></button>
-            </div>
-            <div class="window__header__line-box">
-                <hr class="line-box__line">
-                <hr class="line-box__line">
-                <hr class="line-box__line">
-                <hr class="line-box__line">
-                <hr class="line-box__line">
-                <hr class="line-box__line">
-            </div>
-                <h2>
-                <slot name="heading">default text</slot>
-                </h2>
-
-                <div class="window__header__line-box">
-                    <hr class="line-box__line">
-                    <hr class="line-box__line">
-                    <hr class="line-box__line">
-                    <hr class="line-box__line">
-                    <hr class="line-box__line">
-                    <hr class="line-box__line">
-                </div>
-                <div class="btn-border-wrapper">
-                    <button id="expandBtn" class="window__header__btn window__header__btn--expand"></button>
-                </div>  
-        </div>
-
-
-        <div class="window__body">
-            <div slot="paragraph">
-                <h3>
-                    <slot name="subheading">      
-                    </slot>
-                </h3>
-                <p>
-                    <slot name="lead"></slot>
-                </p>
-                <p>
-                    <slot name="paragraph"></slot>
-                </p>
-            <div>
-    
-            <slot name="image-box">${imageBoxTemp.innerHTML}</slot>
-            
-        </div>
-    </div>
-</main>
-
-`;
-
-console.log(imageBoxTemp);
 
 
 class WindowMacOs extends HTMLElement {
     constructor(){
         super();
-        const shadowroot = this.attachShadow({mode:'open'});
+        
+        
+        this.attachShadow({mode:'open'});
+       
+        
+       
+        
+    }
+    
+    render(){
+        const conditionalDiv = this.shadowRoot.getElementById('conditionalDiv');
+      
 
+
+        if (this.condition) {
+            conditionalDiv.innerHTML = imageBoxTemp.innerHTML;
+        } else {
+            conditionalDiv.innerHTML = '';
+        }
+    }
+    
+ 
+
+
+    connectedCallback() {
+        console.log("connectedCallback ran");
+        // add a shdaowroot to DOM
+        const shadowroot = this.shadowRoot;   
+        // create a copy of windowTemp template and attach it to the shadowroot
         let clone = windowTemp.content.cloneNode(true);
         shadowroot.append(clone);
+
+        // this is now out of scope for all my get attribute functions
+
+        let imgclone = imageBoxTemp.content.cloneNode(true);
+        let windowhook = document.querySelector('#conditionalDiv') || null
+        if(windowhook) {
+           windowhook.append(imgclone);
+        }
     }
 
+    disconnectedCallback(){
+        console.log("why does this make connectedcallback run twice?");
+    }
+
+   
+
     static get observedAttributes(){
-        return ['heading', "subheading", "lead", "paragraph", "img"]
+        return ['heading', "subheading", "lead", "paragraph", "img", "img-src"]
     }
 
     // find the attribute of heading in the dom-tree
@@ -167,16 +117,20 @@ class WindowMacOs extends HTMLElement {
         this.shadowRoot.querySelector('p').textContent = newVal;
      } 
 
-     // not sure how this works. 
+     // gives the image-tag its src. 
      if(attributeName.toLowerCase() ==="img"){
         this.shadowRoot.querySelector("img").setAttribute('src',newVal);
-        source = `${newVal}`
-
+        
+       
      }
+
+    
+    
     }
 
+    
+    
 }
-
 
 
                  
