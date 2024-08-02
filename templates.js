@@ -1,7 +1,5 @@
 // let condition = true;
 
-
-
 // template2(imgSrc) {
 //     return `
 //       <div class="temp2">
@@ -21,18 +19,12 @@ export const imageBoxTemp = document.createElement('template');
                             </div>
                         </div>
                         <div class="about__info-box">
-                       
-                                <ul>
-                                    <li>Name: Isak</li>
-                                    <li>Age: 35</li>
-                                    <li>Status: Broke</li>
-                                    <li>Location: Malmö</li>
-                                     
-                                </ul>
-                                <button class="about__info-box__btn">Contact</button>    
+                            <slot name="list"></slot>
+                            <slot name="btn">
+                            <button class="about__info-box__btn">Contact</button>
+                            </slot>
                         </div>
-                    </div>
-                       
+                    </div> 
                 </section>
             `;
 
@@ -95,7 +87,7 @@ windowTemp.innerHTML = `
             <div>
         
             <div id="conditionalDiv"></div>
-        <slot name="img">${imageBoxTemp.innerHTML}</slot>
+       
         </div>
     </div>
 </main>

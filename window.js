@@ -9,21 +9,30 @@ class WindowMacOs extends HTMLElement {
         
         this.attachShadow({mode:'open'});
        
-        
        
         
     }
     
     render(){
+        console.log("render is running");
+        const hasImg = this.hasAttribute('img');
+        
+        this.shadowRoot.innerHTML = '';
+        this.shadowRoot.appendChild(windowTemp.content.cloneNode(true));
         const conditionalDiv = this.shadowRoot.getElementById('conditionalDiv');
-      
-
-
-        if (this.condition) {
-            conditionalDiv.innerHTML = imageBoxTemp.innerHTML;
-        } else {
-            conditionalDiv.innerHTML = '';
+        
+        if (hasImg) {
+            const imgSrc = this.getAttribute('img');
+            const imageTemplate = imageBoxTemp.content.cloneNode(true);
+            imageTemplate.querySelector('img').src = imgSrc;
+            conditionalDiv.appendChild(imageTemplate);
         }
+
+       
+        
+       
+        
+        
     }
     
  
@@ -31,21 +40,9 @@ class WindowMacOs extends HTMLElement {
 
     connectedCallback() {
         console.log("connectedCallback ran");
-        // add a shdaowroot to DOM
-        const shadowroot = this.shadowRoot;   
-        // create a copy of windowTemp template and attach it to the shadowroot
-        let clone = windowTemp.content.cloneNode(true);
-        shadowroot.append(clone);
-
-        // this is now out of scope for all my get attribute functions
-
-        let imgclone = imageBoxTemp.content.cloneNode(true);
-        let windowhook = document.querySelector('#conditionalDiv') || null
-        if(windowhook) {
-           windowhook.append(imgclone);
-        }
+        this.render();
     }
-
+    
     disconnectedCallback(){
         console.log("why does this make connectedcallback run twice?");
     }
@@ -97,6 +94,8 @@ class WindowMacOs extends HTMLElement {
     set img(value) {
         this.setAttribute("img", value)
     }
+
+    
  
 
     attributeChangedCallback(attributeName, oldVal, newVal){
@@ -119,12 +118,8 @@ class WindowMacOs extends HTMLElement {
 
      // gives the image-tag its src. 
      if(attributeName.toLowerCase() ==="img"){
-        this.shadowRoot.querySelector("img").setAttribute('src',newVal);
-        
-       
+        this.shadowRoot.querySelector("img").setAttribute('src',newVal);    
      }
-
-    
     
     }
 
