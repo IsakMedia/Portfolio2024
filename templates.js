@@ -1,13 +1,3 @@
-// let condition = true;
-
-// template2(imgSrc) {
-//     return `
-//       <div class="temp2">
-//         <img src="${imgSrc}" alt="Image">
-//       </div>
-//     `;
-//   }
-
 export const imageBoxTemp = document.createElement('template');
         imageBoxTemp.innerHTML=`
             
@@ -15,14 +5,16 @@ export const imageBoxTemp = document.createElement('template');
                     <div class="about__about-container">
                         <div class="about__image-box">
                             <div class="about__image-box__profile-box">
-                            <slot name="img-src"><img/></slot>
+                            <img/>
                             </div>
                         </div>
                         <div class="about__info-box">
                             <slot name="list"></slot>
-                            <slot name="btn">
-                            <button class="about__info-box__btn">Contact</button>
-                            </slot>
+                            
+                            <button class="about__info-box__btn">
+                            <slot name="btn-text">Contact</slot>
+                            </button>
+                            
                         </div>
                     </div> 
                 </section>
@@ -55,7 +47,7 @@ windowTemp.innerHTML = `
                 <hr class="line-box__line">
                 <hr class="line-box__line">
             </div>
-                <h2>
+                <h2 data-attr="heading">
                 <slot name="heading">default text</slot>
                 </h2>
 
@@ -75,13 +67,13 @@ windowTemp.innerHTML = `
 
         <div class="window__body">
             <div slot="paragraph">
-                <h3>
+                <h3 data-attri="subheading">
                     <slot name="subheading"></slot>
                 </h3>
-                <p>
+                <p data-attri="lead">
                     <slot name="lead"></slot>
                 </p>
-                <p>
+                <p data-attri="paragraph">
                     <slot name="paragraph"></slot>
                 </p>
             <div>

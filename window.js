@@ -1,75 +1,72 @@
  import {windowTemp, imageBoxTemp} from './templates.js'
 
-
-
 class WindowMacOs extends HTMLElement {
     constructor(){
-        super();
-        
-        
-        this.attachShadow({mode:'open'});
-       
-       
-        
+        super(); 
+        console.log("constructor");  
+        this.attachShadow({mode:'open'});  
     }
     
     render(){
-        console.log("render is running");
+        console.log("render()");
         const hasImg = this.hasAttribute('img');
         
         this.shadowRoot.innerHTML = '';
         this.shadowRoot.appendChild(windowTemp.content.cloneNode(true));
-        const conditionalDiv = this.shadowRoot.getElementById('conditionalDiv');
+
         
+      
+
         if (hasImg) {
             const imgSrc = this.getAttribute('img');
             const imageTemplate = imageBoxTemp.content.cloneNode(true);
             imageTemplate.querySelector('img').src = imgSrc;
-            conditionalDiv.appendChild(imageTemplate);
+            this.shadowRoot.querySelector('#conditionalDiv').appendChild(imageTemplate);
         }
-
-       
-        
-       
-        
-        
+              
     }
     
  
 
 
     connectedCallback() {
-        console.log("connectedCallback ran");
+        console.log("connectedCallback");
         this.render();
     }
     
     disconnectedCallback(){
-        console.log("why does this make connectedcallback run twice?");
+        console.log("disconnectedCallback");
     }
 
    
 
     static get observedAttributes(){
-        return ['heading', "subheading", "lead", "paragraph", "img", "img-src"]
+        console.log("observedAttributes");
+        return ["heading", "subheading", "lead", "paragraph"]
     }
 
     // find the attribute of heading in the dom-tree
     // get the attribute from the html so that js can use it
     // set the new attribute to its value
     get heading(){
+      
         return this.getAttribute('heading');
     };
 
     set heading(value) {
         this.setAttribute("heading", value )
+        console.log("Set heading körs inte :(");
+       
     };
 
     //
     get subheading(){
+        console.log("get subheading körs inte");
         return this.getAttribute('subheading')
     };
 
     set subheading(value){
+        console.log("set subheading körs inte");
         this.setAttribute('subheading', value);
     }
     //
@@ -99,9 +96,14 @@ class WindowMacOs extends HTMLElement {
  
 
     attributeChangedCallback(attributeName, oldVal, newVal){
+        console.log("attributeChangedCallback");
+        if (oldVal !== newVal) {
+            this.render();
+        }
 
      if(attributeName.toLowerCase() === "heading"){
-        this.shadowRoot.querySelector('h2').textContent = newVal;
+         this.shadowRoot.querySelector('h2').textContent = newVal;
+         console.log(`if attributeName is heading: old val: ${oldVal},newVal: ${newVal}`);
      }
 
      if(attributeName.toLowerCase()==="subheading") {
@@ -120,15 +122,16 @@ class WindowMacOs extends HTMLElement {
      if(attributeName.toLowerCase() ==="img"){
         this.shadowRoot.querySelector("img").setAttribute('src',newVal);    
      }
-    
+
+     if(attributeName.toLowerCase()=== "btn-text") {
+        this.shadowRoot.querySelector(".about__info-box__btn").textContent= newVal;
+     }
+
+   
     }
 
     
     
 }
-
-
-                 
-
 
 customElements.define('window-mac', WindowMacOs);
