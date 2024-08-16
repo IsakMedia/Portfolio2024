@@ -157,3 +157,15 @@ maybe by moving   imageBoxTemp.content.cloneNode(true); and attach it to empty d
 i can create a condition to render it. and it maybe should be placed within a livescycle method in web components
 to render in at different times with different conditions met. but this messes with scope. so look into it.
 maybe do as claude suggested and make a loop to get a hold of all gets and sets. think about it will ya
+
+6/8 24
+realizes that my component in a way works as expected, though ive forgotten how things work. i also realize that claude is right in a lot of ways but also the more i use AI to help me with logic, the further from god i walk. AI is great to help me with approaches to solvING problems but not so good at fixing them. Because it have its own idea on how to fix things, and not stringent with how i want to fix it. It's good in a way to figuer out the limitations of AI or maybe even more, the limitations of me, my journey or my comprehension of code in relation to AI.
+Like theres a sub-journey for trying to become a more profficient AI-web-developer.
+Anyways need to fix the bug of re-renders that mess with get and set attributes or observedAttributes that triggers a rerender and cleanup of the whole document. so execution order
+
+16/8
+if this.render() is run in the constructor (opposed to in a connectedcallback) it renderes all versions of my component
+with text, with text and image, with only image. the subheading works but not the heading ?!
+is a it a slot prob?
+
+theres something about using attributes that messes with things, if i have both heading and subheading it only set the latter, if i only have a heading it works. now what in the

@@ -48,7 +48,7 @@ windowTemp.innerHTML = `
                 <hr class="line-box__line">
             </div>
                 <h2 data-attr="heading">
-                <slot name="heading">default text</slot>
+                <slot name="heading">header</slot>
                 </h2>
 
                 <div class="window__header__line-box">
