@@ -3,22 +3,15 @@
 class WindowMacOs extends HTMLElement {
     constructor(){
         super(); 
-        console.log("1: constructor");  
         this.attachShadow({mode:'open'});  
-
-        // if this renders all version of my component on startup. 
-        // render runs 3 times per instance
-       this.render();
+        this.render();
     }
     
     render(){
-        console.log("2: render()");
         const hasImg = this.hasAttribute('img');
-        
         this.shadowRoot.innerHTML = '';
         this.shadowRoot.appendChild(windowTemp.content.cloneNode(true));
-
-        
+  
         if (hasImg) {
             const imgSrc = this.getAttribute('img');
             const imageTemplate = imageBoxTemp.content.cloneNode(true);
@@ -30,13 +23,9 @@ class WindowMacOs extends HTMLElement {
     static get observedAttributes(){
         console.log("observedAttributes");
         // den här verkar göra något iaf
-        return ["heading", "subheading", "lead", "paragraph"]
+        return ["heading", "subheading", "lead", "paragraph", "button"]
     }
     
- 
-    // find the attribute of heading in the dom-tree
-    // get the attribute from the html so that js can use it
-    // set the new attribute to its value
     get heading(){
         console.log(" heading",this.getAttribute('heading'));
         return this.getAttribute('heading');
@@ -48,7 +37,6 @@ class WindowMacOs extends HTMLElement {
        
     };
 
-    //
     get subheading(){
         console.log("get subheading körs inte");
         return this.getAttribute('subheading')
@@ -58,14 +46,14 @@ class WindowMacOs extends HTMLElement {
         console.log("set subheading körs inte");
         this.setAttribute('subheading', value);
     }
-    //
+
     get lead(){
         return this.getAttribute('paragraph')
     }; 
     set lead(value) {
         this.setAttribute('lead', value)
     }
-    //
+
     get paragraph(){
         return this.getAttribute("paragraph")
     };
@@ -96,8 +84,7 @@ class WindowMacOs extends HTMLElement {
      if(attributeName.toLowerCase()==="subheading") {
         console.log("did subheading textcontent set?");
         this.shadowRoot.querySelector('h3').textContent = newVal;
-        
-       
+          
      } 
      
      if(attributeName.toLowerCase()==="lead") {
@@ -108,22 +95,23 @@ class WindowMacOs extends HTMLElement {
         this.shadowRoot.querySelector('p').textContent = newVal;
      } 
 
-     // gives the image-tag its src. 
      if(attributeName.toLowerCase() ==="img"){
         this.shadowRoot.querySelector("img").setAttribute('src',newVal);    
      }
 
-     if(attributeName.toLowerCase()=== "btn-text") {
-        console.log("trying to change the button text");
+     if(attributeName.toLowerCase()=== "button") {
+        const attachmentDiv = this.shadowRoot.querySelector(".about__info-box");
+        const btn = document.createElement("button");
+        btn.classList.add("about__info-box__btn");
+        btn.textContent = newVal;
+        attachmentDiv.appendChild(btn);
+        
         this.shadowRoot.querySelector(".about__info-box__btn").textContent= newVal;
      }
 
    
     }
-
-
-    
-    
+  
 }
 
 customElements.define('window-mac', WindowMacOs);

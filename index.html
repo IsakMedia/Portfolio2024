@@ -41,24 +41,26 @@
            
         </window-mac>
        
-        <!-- display-box sets display flex and gives each child a shadow like in figma design -->
-        <window-mac heading="Quick facts" img="./src/images/isak.png" >
-            
-            
-           
+        <window-mac heading="Quick facts" img="./src/images/isak.png"  >
+                     
             <ul slot="list">     
                     <li>Name: Isak</li>
                     <li>Age: 35</li>
                     <li>Status: Broke</li>
                     <li>Location: Malmö</li>          
             </ul>
-            
-           
 
-        
+            <button slot="button" class="about__info-box__btn">
+             Hallå?
+            </button>
+                    
         </window-mac>
 
-        <window-mac img="./src/images/test-img.png" heading="get some" btn-text="bee"></window-mac>
+        <window-mac img="./src/images/test-img.png" heading="get some" button="vadå">
+            
+            <button slot="button">BUTTON</button>
+
+        </window-mac>
        
         
     </main>

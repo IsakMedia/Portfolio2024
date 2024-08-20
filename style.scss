@@ -15,6 +15,7 @@ $box-shadow-components: 10px 10px 0px -5px rgba(0, 0, 0, 1);
     box-sizing: border-box;
     background-color: $clr-background-accent;
 
+
     a {
         color: black;
 
@@ -23,6 +24,11 @@ $box-shadow-components: 10px 10px 0px -5px rgba(0, 0, 0, 1);
         }
 
     }
+
+    ul {
+        list-style-type: none;
+    }
+
 }
 
 
@@ -30,6 +36,16 @@ body {
     padding: 0;
     margin: 0;
     min-height: 100dvh;
+
+
+    button {
+        background: none;
+        color: inherit;
+        border: none;
+        padding: 0;
+        outline: inherit;
+    }
+
 }
 
 main {

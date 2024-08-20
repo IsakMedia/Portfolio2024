@@ -10,11 +10,9 @@ export const imageBoxTemp = document.createElement('template');
                         </div>
                         <div class="about__info-box">
                             <slot name="list"></slot>
-                            
-                            <button class="about__info-box__btn">
-                            <slot name="btn-text">Contact</slot>
+                            <button>
+                            <slot name="button"</slot>
                             </button>
-                            
                         </div>
                     </div> 
                 </section>
@@ -47,9 +45,7 @@ windowTemp.innerHTML = `
                 <hr class="line-box__line">
                 <hr class="line-box__line">
             </div>
-                <h2 data-attr="heading">
-                <slot name="heading">header</slot>
-                </h2>
+                <h2></h2>
 
                 <div class="window__header__line-box">
                     <hr class="line-box__line">
@@ -67,13 +63,15 @@ windowTemp.innerHTML = `
 
         <div class="window__body">
             <div slot="paragraph">
-                <h3 data-attri="subheading">
+                <h3>
                     <slot name="subheading"></slot>
                 </h3>
-                <p data-attri="lead">
+
+                <p>
                     <slot name="lead"></slot>
                 </p>
-                <p data-attri="paragraph">
+                
+                <p>
                     <slot name="paragraph"></slot>
                 </p>
             <div>
@@ -87,8 +85,3 @@ windowTemp.innerHTML = `
 `;
 
 
-
-            
-//  <slot name="img">${imageBoxTemp.innerHTML}</slot>
-// <slot name="img">${renderImg}</slot> 
-// <slot name="img">${this.condition ? imageBoxTemp.innerHTML : ''} </slot>
