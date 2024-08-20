@@ -29,6 +29,7 @@ class WindowMacOs extends HTMLElement {
 
     static get observedAttributes(){
         console.log("observedAttributes");
+        // den här verkar göra något iaf
         return ["heading", "subheading", "lead", "paragraph"]
     }
     
@@ -81,20 +82,21 @@ class WindowMacOs extends HTMLElement {
     }
 
   
-
-    
     attributeChangedCallback(attributeName, oldVal, newVal){
-        if (oldVal !== newVal) {
-            this.render();
-        }
+        // if (oldVal !== newVal) {
+        //     this.render();
+        // }
 
      if(attributeName.toLowerCase() === "heading"){
          this.shadowRoot.querySelector('h2').textContent = newVal;
+         console.log("did heading textcontent set?");
         
      }
 
      if(attributeName.toLowerCase()==="subheading") {
+        console.log("did subheading textcontent set?");
         this.shadowRoot.querySelector('h3').textContent = newVal;
+        
        
      } 
      
@@ -112,6 +114,7 @@ class WindowMacOs extends HTMLElement {
      }
 
      if(attributeName.toLowerCase()=== "btn-text") {
+        console.log("trying to change the button text");
         this.shadowRoot.querySelector(".about__info-box__btn").textContent= newVal;
      }
 
