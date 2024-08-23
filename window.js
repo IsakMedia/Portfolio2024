@@ -1,49 +1,57 @@
- import {windowTemp, imageBoxTemp} from './templates.js'
+ import {windowTemp, imageBoxTemp, textBoxTemp, boxesTemp} from './templates.js'
 
 class WindowMacOs extends HTMLElement {
     constructor(){
         super(); 
         this.attachShadow({mode:'open'});  
         this.render();
+   
     }
-    
+  
     render(){
         const hasImg = this.hasAttribute('img');
+        const boxes = this.hasAttribute('boxes');
         this.shadowRoot.innerHTML = '';
         this.shadowRoot.appendChild(windowTemp.content.cloneNode(true));
   
-        if (hasImg) {
+        const boxesTemplate = boxesTemp.content.cloneNode(true);
+       
+        if (hasImg && !boxes) {
+            this.shadowRoot.querySelector('#conditionalDiv').appendChild(boxesTemplate);
+
             const imgSrc = this.getAttribute('img');
             const imageTemplate = imageBoxTemp.content.cloneNode(true);
             imageTemplate.querySelector('img').src = imgSrc;
-            this.shadowRoot.querySelector('#conditionalDiv').appendChild(imageTemplate);
+            this.shadowRoot.querySelector('.about__about-container').appendChild(imageTemplate);
         }
+   
+        // const hasText =  this.shadowRoot.querySelector('.about__about-container');
+        // if(hasText) {
+        //     this.shadowRoot.querySelector('.about__about-container').appendChild(boxTemplate);
+        // }
+
+       
+
     }
 
     static get observedAttributes(){
-        console.log("observedAttributes");
-        // den här verkar göra något iaf
-        return ["heading", "subheading", "lead", "paragraph", "button"]
+        return ["heading", "subheading", "lead", "paragraph", "button", "boxes"]
     }
     
     get heading(){
-        console.log(" heading",this.getAttribute('heading'));
         return this.getAttribute('heading');
     };
 
     set heading(value) {
         this.setAttribute("heading", value )
-        console.log("Set heading körs inte :(");
        
     };
 
     get subheading(){
-        console.log("get subheading körs inte");
         return this.getAttribute('subheading')
     };
 
     set subheading(value){
-        console.log("set subheading körs inte");
         this.setAttribute('subheading', value);
     }
 
@@ -69,6 +77,12 @@ class WindowMacOs extends HTMLElement {
         this.setAttribute("img", value)
     }
 
+    get boxes() {
+        return this.getAttribute("box")
+    }
+
+   
+
   
     attributeChangedCallback(attributeName, oldVal, newVal){
         // if (oldVal !== newVal) {
@@ -77,12 +91,11 @@ class WindowMacOs extends HTMLElement {
 
      if(attributeName.toLowerCase() === "heading"){
          this.shadowRoot.querySelector('h2').textContent = newVal;
-         console.log("did heading textcontent set?");
+         
         
      }
 
      if(attributeName.toLowerCase()==="subheading") {
-        console.log("did subheading textcontent set?");
         this.shadowRoot.querySelector('h3').textContent = newVal;
           
      } 
@@ -99,6 +112,12 @@ class WindowMacOs extends HTMLElement {
         this.shadowRoot.querySelector("img").setAttribute('src',newVal);    
      }
 
+     if(attributeName.toLowerCase()==="boxes") {
+        const boxesTemplate = boxesTemp.content.cloneNode(true);
+        this.shadowRoot.querySelector('#conditionalDiv').appendChild(boxesTemplate);
+
+     }
+
      if(attributeName.toLowerCase()=== "button") {
         const attachmentDiv = this.shadowRoot.querySelector(".about__info-box");
         const btn = document.createElement("button");
@@ -111,7 +130,9 @@ class WindowMacOs extends HTMLElement {
 
    
     }
-  
+    
+   
 }
+
 
 customElements.define('window-mac', WindowMacOs);

@@ -38,14 +38,6 @@ body {
     min-height: 100dvh;
 
 
-    button {
-        background: none;
-        color: inherit;
-        border: none;
-        padding: 0;
-        outline: inherit;
-    }
-
 }
 
 main {
@@ -206,4 +198,10 @@ main {
         }
 
     }
+}
+
+
+.tester-class {
+    color: red;
+    border: 2px solid red;
 }

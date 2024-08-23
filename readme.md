@@ -40,6 +40,8 @@ the proper way to solve it somewhere else.
 a little breathers in my text.
 * my html didnt work, hard to look at my tiny screen figuering out want tags has been closed off or missing its closing tag and so on. the Bot solves it
 
+[edit: i left this long ago. chatGPT is help and a curse, claude is cool too, i use em for everything sometimes it works, sometimes it doesnt]
+
 ## ideas
 
 * could i do a vanilla js webcomponent?
@@ -169,3 +171,43 @@ with text, with text and image, with only image. the subheading works but not th
 is a it a slot prob?
 
 theres something about using attributes that messes with things, if i have both heading and subheading it only set the latter, if i only have a heading it works. now what in the
+
+23/8
+what ive learned from this ordeal. architecture is hard, doing css first is terrible, reinventing the wheel helps you learn stuff, but maybe not things you need. when i listen to tutorials about web components everyone is saying
+"try not to think about it as react components"
+"working with scoped css is terrible"
+Guess what i did?
+
+* i need to check if image container have a sibling and if so remove some classes.
+
+if only child - render stuff with all them classes
+if sibling - only the image-box
+
+<section class="about">
+<div class=".about__about-container">
+// image needs these container classes to look proper
+// text box need these container classes to look proper
+// if there is both an image and a textbox, there should be only one about and about-container class
+</div>
+</section>
+
+there is a super simple answer to this. i know it. but brain is mushy and i am stupid. Thats ok. i should go for a run
+and thing about it.
+
+wait. should i have to include if image should be placed in a box. right now an image cant be shown without a box
+but if img attribute already gives a box, it be redundant to add img and boxes as attributes. will also ruin !boxes rule
+* should check for children or siblings
+
+element.firstChild
+or
+element.hasChildNodes()
+
+if  element.childNodes.length <= 1 set boxesTemp (.about__about-container ) to #conditionalDiv then add whatever.
+else just add proper template.
+i guess !boxes or !img attributes should do the trick to diffrentiate between if an image is added or text.
+
+-this doesnt scale at all. attributes dont make much sense. but i guess there shouldve been different kinds of
+costum elements originally to make it make more sense. but you dumbed it down remember? dont make the same mistake again.
+eyes on the prices (the price in this case is the same price as "play stupid games, win stupid prices").
+
+i will name this project "how to pwn yourself 101"

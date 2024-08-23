@@ -1,24 +1,36 @@
+export const boxesTemp = document.createElement('template');
+        boxesTemp.innerHTML=`
+        <section class="about">
+            <div class="about__about-container">
+             ${/*should first be injected into conditionalDiv if maybe a attribute */''}
+               ${/*recieve imagebox or contentbox */''}
+            </div>
+        </section>
+        
+        `;
+
+
+export const textBoxTemp = document.createElement('template');
+        textBoxTemp.innerHTML=`
+                <div class="about__info-box"> 
+                    <slot name="subheading"></slot>
+                    <slot name="list"></slot>
+                    <slot name=button></slot>       
+                </div>
+        
+        `;
+
+
 export const imageBoxTemp = document.createElement('template');
-        imageBoxTemp.innerHTML=`
-            
-                <section class="about">
-                    <div class="about__about-container">
+        imageBoxTemp.innerHTML=`  
                         <div class="about__image-box">
                             <div class="about__image-box__profile-box">
                             <img/>
                             </div>
                         </div>
-                        <div class="about__info-box">
-                            <slot name="list"></slot>
-                            <button>
-                            <slot name="button"</slot>
-                            </button>
-                        </div>
-                    </div> 
-                </section>
             `;
 
-
+//<div class="about__about-container">
 
 export const windowTemp = document.createElement('template');
 windowTemp.innerHTML = `
@@ -62,7 +74,7 @@ windowTemp.innerHTML = `
 
 
         <div class="window__body">
-            <div slot="paragraph">
+            <div>
                 <h3>
                     <slot name="subheading"></slot>
                 </h3>
@@ -77,6 +89,10 @@ windowTemp.innerHTML = `
             <div>
         
             <div id="conditionalDiv"></div>
+            
+            
+           
+            
        
         </div>
     </div>
