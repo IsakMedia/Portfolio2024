@@ -25,13 +25,21 @@ class WindowMacOs extends HTMLElement {
             this.shadowRoot.querySelector('.about__about-container').appendChild(imageTemplate);
         }
    
-        // const hasText =  this.shadowRoot.querySelector('.about__about-container');
-        // if(hasText) {
-        //     this.shadowRoot.querySelector('.about__about-container').appendChild(boxTemplate);
-        // }
+        const hasText =  this.shadowRoot.querySelector('.about__about-container');
+        if(hasText) {
+            this.shadowRoot.querySelector('.about__about-container').appendChild(textBoxTemp);
+        }
 
        
 
+    }
+
+    connectedCallback(){
+        console.log("runs when object is added to the dom");
+    }
+
+    disconnectedCallback(){
+        console.log("disconnect happens when the element 'this', is removed");
     }
 
     static get observedAttributes(){
@@ -81,7 +89,6 @@ class WindowMacOs extends HTMLElement {
         return this.getAttribute("box")
     }
 
-   
 
   
     attributeChangedCallback(attributeName, oldVal, newVal){
@@ -119,12 +126,11 @@ class WindowMacOs extends HTMLElement {
      }
 
      if(attributeName.toLowerCase()=== "button") {
-        const attachmentDiv = this.shadowRoot.querySelector(".about__info-box");
+        const attachmentDiv = this.shadowRoot.querySelector(".about__about-container");
         const btn = document.createElement("button");
         btn.classList.add("about__info-box__btn");
         btn.textContent = newVal;
         attachmentDiv.appendChild(btn);
-        
         this.shadowRoot.querySelector(".about__info-box__btn").textContent= newVal;
      }
 
@@ -132,6 +138,10 @@ class WindowMacOs extends HTMLElement {
     }
     
    
+}
+
+const remove =()=> {
+    document.querySelector("window-mac").remove();
 }
 
 

@@ -56,15 +56,19 @@
                     
         </window-mac>
 
-        <window-mac img="./src/images/test-img.png" heading="get some">
+        <window-mac img="./src/images/test-img.png" heading="get some" >
 
-            
+            <!-- Should be added without an attribute on the web component
+            but maybe do a new webcomponent for buttons and place in here instead. unless its messy
+            then just solve it oldschool 
+            -->
             <button slot="button" class="about__info-box__btn">BUTTON</button>
 
         </window-mac>
        
         
     </main>
+    <script src="https://unpkg.com/browse/@webcomponents/webcomponentsjs@2.8.0/webcomponents-bundle.js"></script>
     <script src="./script.js" type="module"></script>
 </body>
 </html>
