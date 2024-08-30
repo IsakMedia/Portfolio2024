@@ -1,20 +1,11 @@
-export const boxesTemp = document.createElement('template');
-        boxesTemp.innerHTML=`
-        <section class="about">
-            <div class="about__about-container">
-             ${/*should first be injected into conditionalDiv if maybe a attribute */''}
-               ${/*recieve imagebox or contentbox */''}
-            </div>
-        </section>
-        
-        `;
-
 
 export const textBoxTemp = document.createElement('template');
         textBoxTemp.innerHTML=`
                 <div class="about__info-box"> 
                     <slot name="subheading"></slot>
+                    
                     <slot name="list"></slot>
+                    
                     <slot name=button></slot>       
                 </div>
         
@@ -89,7 +80,8 @@ windowTemp.innerHTML = `
             <div>
         
             <div id="conditionalDiv"></div>
-            
+
+                      
             
            
             

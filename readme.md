@@ -192,10 +192,11 @@ if sibling - only the image-box
 </section>
 
 there is a super simple answer to this. i know it. but brain is mushy and i am stupid. Thats ok. i should go for a run
-and thing about it.
+and think about it.
 
 wait. should i have to include if image should be placed in a box. right now an image cant be shown without a box
 but if img attribute already gives a box, it be redundant to add img and boxes as attributes. will also ruin !boxes rule
+
 * should check for children or siblings
 
 element.firstChild
@@ -207,7 +208,28 @@ else just add proper template.
 i guess !boxes or !img attributes should do the trick to diffrentiate between if an image is added or text.
 
 -this doesnt scale at all. attributes dont make much sense. but i guess there shouldve been different kinds of
-costum elements originally to make it make more sense. but you dumbed it down remember? dont make the same mistake again.
+custom elements originally to make it make more sense. but you dumbed it down remember? dont make the same mistake again.
 eyes on the prices (the price in this case is the same price as "play stupid games, win stupid prices").
 
 i will name this project "how to pwn yourself 101"
+
+30/8
+ i got multiple <main>
+ today i learned dont do markup first.
+
+## hard truths
+
+30/8
+i thought about how i was doing a lot of stuff and then having to retract back. like throwing out a couple of custom
+elements and just do one file. or that i have a lot of code in my windows.js that doesnt do anything. and i dont know
+why, but also dont know why they should. And i thought that maybe it goes into this idea which i (still!) believed, that
+i was just stupid. Its how it is sometime. but it also teached me a lot about development. Because i get to hit these walls where i get stuck and feel confused and i cant think myself out of it. i think about it like i run out of brain-RAM.
+so i have to dumb it down and make it less complex. Usually that only take me on a journey for another brick wall to hit my head on. But it really helps me reason and think about problems. finding limitations to my thinking or realize what i dont see or what decisions i have to make. like "realizing", at least for now. that it doesnt make much sense to give one custom element infinite amount of conflicting attributes. like adding a box with text in it if it has an image next to it or not, or set up a lot of other rules of if statments in other if statements.
+maybe that should be another custom element, or maybe. juuust maybe. it should be just plain basic markup. maybe something
+is allowed to be hardcoded into it.
+for instance. one path i was on, i tried to add all my bio-text into the attribute of text="", right into the custom element. Like wtf? still i didnt see that i was on that path until i was about to implement it and then i felt confused.
+
+im going to try today to not beat myself up about it. that i make stupid choices, and that i dont see the obvious even if its suuuuper obvious. I have to fail this to get what the tutorials are saying, and what they warn me about when they say "dont think about them as react components" and so on.
+
+i remember first time in videoproduction, how i heard about storyboards. and i thought it was stupid. i had my vision, its easy. i bascially got it all planned out in my head. oh sweet summerchild.
+now i do storyboards, and i design in figma. and im learning to plan my code. it will take a little while though. Because i have some serious frustrations, limitations and let downs ahead.

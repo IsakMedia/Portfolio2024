@@ -1,4 +1,5 @@
 import * as windowMac from './window.js';
+import * as ctaButton from './ctaButton.js'
 
 console.log("Hello and welcome to the console!");
 console.log("Are you just curious, or are you an old classmate maybe?")

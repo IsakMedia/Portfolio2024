@@ -1,4 +1,5 @@
- import {windowTemp, imageBoxTemp, textBoxTemp, boxesTemp} from './templates.js'
+ import {windowTemp, imageBoxTemp, textBoxTemp} from './templates.js'
+
 
 class WindowMacOs extends HTMLElement {
     constructor(){
@@ -10,27 +11,27 @@ class WindowMacOs extends HTMLElement {
   
     render(){
         const hasImg = this.hasAttribute('img');
-        const boxes = this.hasAttribute('boxes');
+        const hasList = this.hasAttribute('list');
         this.shadowRoot.innerHTML = '';
         this.shadowRoot.appendChild(windowTemp.content.cloneNode(true));
   
-        const boxesTemplate = boxesTemp.content.cloneNode(true);
        
-        if (hasImg && !boxes) {
-            this.shadowRoot.querySelector('#conditionalDiv').appendChild(boxesTemplate);
-
+        if (hasImg || hasList) {
+            this.shadowRoot.querySelector('#conditionalDiv').classList.add("about__about-container");
+        }
+       
+        if (hasImg) {
             const imgSrc = this.getAttribute('img');
             const imageTemplate = imageBoxTemp.content.cloneNode(true);
             imageTemplate.querySelector('img').src = imgSrc;
             this.shadowRoot.querySelector('.about__about-container').appendChild(imageTemplate);
-        }
-   
-        const hasText =  this.shadowRoot.querySelector('.about__about-container');
-        if(hasText) {
-            this.shadowRoot.querySelector('.about__about-container').appendChild(textBoxTemp);
-        }
 
-       
+        } 
+        if (hasList) {
+            const textBoxTemplate = textBoxTemp.content.cloneNode(true);
+            this.shadowRoot.querySelector('.about__about-container').appendChild(textBoxTemplate);
+        }
+        
 
     }
 
@@ -43,7 +44,7 @@ class WindowMacOs extends HTMLElement {
     }
 
     static get observedAttributes(){
-        return ["heading", "subheading", "lead", "paragraph", "button", "boxes"]
+        return ["heading", "subheading", "lead", "paragraph", "button", "text", "img"]
     }
     
     get heading(){
@@ -85,8 +86,8 @@ class WindowMacOs extends HTMLElement {
         this.setAttribute("img", value)
     }
 
-    get boxes() {
-        return this.getAttribute("box")
+    get list() {
+        return this.getAttribute("list")
     }
 
 
@@ -119,22 +120,11 @@ class WindowMacOs extends HTMLElement {
         this.shadowRoot.querySelector("img").setAttribute('src',newVal);    
      }
 
-     if(attributeName.toLowerCase()==="boxes") {
-        const boxesTemplate = boxesTemp.content.cloneNode(true);
-        this.shadowRoot.querySelector('#conditionalDiv').appendChild(boxesTemplate);
-
+     if(attributeName.toLowerCase()==="list") {
+        
      }
 
-     if(attributeName.toLowerCase()=== "button") {
-        const attachmentDiv = this.shadowRoot.querySelector(".about__about-container");
-        const btn = document.createElement("button");
-        btn.classList.add("about__info-box__btn");
-        btn.textContent = newVal;
-        attachmentDiv.appendChild(btn);
-        this.shadowRoot.querySelector(".about__info-box__btn").textContent= newVal;
-     }
 
-   
     }
     
    
