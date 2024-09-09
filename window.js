@@ -31,6 +31,8 @@ class WindowMacOs extends HTMLElement {
             const textBoxTemplate = textBoxTemp.content.cloneNode(true);
             this.shadowRoot.querySelector('.about__about-container').appendChild(textBoxTemplate);
         }
+
+       
         
 
     }
@@ -93,9 +95,6 @@ class WindowMacOs extends HTMLElement {
 
   
     attributeChangedCallback(attributeName, oldVal, newVal){
-        // if (oldVal !== newVal) {
-        //     this.render();
-        // }
 
      if(attributeName.toLowerCase() === "heading"){
          this.shadowRoot.querySelector('h2').textContent = newVal;
@@ -121,7 +120,7 @@ class WindowMacOs extends HTMLElement {
      }
 
      if(attributeName.toLowerCase()==="list") {
-        
+        //
      }
 
 

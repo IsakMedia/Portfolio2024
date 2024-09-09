@@ -8,9 +8,29 @@
 </head>
 <body>
     <main>
+
+        <window-mac heading="Quick facts" img="./src/images/isak.png" list>
+                     
+            <ul slot="list">     
+                    <li>Name: Isak</li>
+                    <li>Age: 35</li>
+                    <li>Status: Broke</li>
+                    <li>Location: Malmö</li>          
+            </ul>
+
+            <a slot="cta">
+                <cta-button mailto="hej@isakmedia.se">Contact</cta-button>
+            </a>
+
+            <a slot="cta">
+                <cta-button href="www.google.com">Contract</cta-button>
+            </a>
+
+                    
+        </window-mac>
        
-        <window-mac heading="About" subheading="who am i?" >
-            <h3 slot="subheading">subheading</h3>
+        <window-mac heading="About" subheading="feeling curious?">
+           
             <p slot="lead">
                 TL;DR: A middle aged balding guy who is strangely still curious about life. He likes scss,  accessibility, javascript and A.I. 
                 <br>( I asked an A.I to shorten my text for me and it did a really good job. But i thought this was funnier) 
@@ -38,33 +58,30 @@
                 Get in <a href="#">touch!</a>
             </p>
 
-            
+            <a slot="cta" href="www.google.com">
+            hello   
+            </a>
+
+            <div slot="cta"><cta-button> hallå </cta-button></div>
            
            
         </window-mac>
        
-        <window-mac heading="Quick facts" img="./src/images/isak.png" list>
-                     
-            <ul slot="list">     
-                    <li>Name: Isak</li>
-                    <li>Age: 35</li>
-                    <li>Status: Broke</li>
-                    <li>Location: Malmö</li>          
-            </ul>
+        
 
-            <button slot="button"> Hallå? </button>
-                    
-        </window-mac>
-
-        <window-mac img="./src/images/test-img.png" heading="get some">
-
-           
-        </window-mac>
+        <window-mac img="./src/images/test-img.png" heading="get some">  </window-mac>
        
-        <cta-button text="hello"></cta-button>
+        <window-mac>
+            <cta-button mailto="hej@isakmedia.se">Contact</cta-button>
+
+        </window-mac>
+
+        <cta-button mailto="hej@isakmedia.se">Contact</cta-button>
+        <cta-button>Contact</cta-button>
         
     </main>
     <!-- <script src="https://unpkg.com/browse/@webcomponents/webcomponentsjs@2.8.0/webcomponents-bundle.js"></script> -->
     <script src="./script.js" type="module"></script>
+   
 </body>
 </html>

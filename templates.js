@@ -6,7 +6,8 @@ export const textBoxTemp = document.createElement('template');
                     
                     <slot name="list"></slot>
                     
-                    <slot name=button></slot>       
+                     
+                    <slot name="cta"></slot>     
                 </div>
         
         `;
@@ -19,6 +20,7 @@ export const imageBoxTemp = document.createElement('template');
                             <img/>
                             </div>
                         </div>
+                        
             `;
 
 //<div class="about__about-container">
@@ -48,7 +50,7 @@ windowTemp.innerHTML = `
                 <hr class="line-box__line">
                 <hr class="line-box__line">
             </div>
-                <h2></h2>
+                <h2><slot name="heading">set attribute 'heading'</slot></h2>
 
                 <div class="window__header__line-box">
                     <hr class="line-box__line">
@@ -77,9 +79,13 @@ windowTemp.innerHTML = `
                 <p>
                     <slot name="paragraph"></slot>
                 </p>
+
+                
             <div>
         
-            <div id="conditionalDiv"></div>
+            <div id="conditionalDiv">
+            </div>
+          
 
                       
             

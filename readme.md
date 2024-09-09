@@ -233,3 +233,6 @@ im going to try today to not beat myself up about it. that i make stupid choices
 
 i remember first time in videoproduction, how i heard about storyboards. and i thought it was stupid. i had my vision, its easy. i bascially got it all planned out in my head. oh sweet summerchild.
 now i do storyboards, and i design in figma. and im learning to plan my code. it will take a little while though. Because i have some serious frustrations, limitations and let downs ahead.
+
+9/9
+Button aint behaving as it should. maybe its something wrong in the click event. i want the right attribute to trigger the correct respons. you should be able to write "mailto" and make button into mail-button or "href" to make it a navigation link. console.log()s dont fire
