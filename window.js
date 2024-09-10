@@ -36,7 +36,7 @@ class WindowMacOs extends HTMLElement {
 
   
     static get observedAttributes(){
-        return ["heading", "subheading", "lead", "paragraph", "button", "text", "img"]
+        return ["heading", "subheading", ]
     }
     
     get heading(){
@@ -56,32 +56,15 @@ class WindowMacOs extends HTMLElement {
         this.setAttribute('subheading', value);
     }
 
-    get lead(){
-        return this.getAttribute('paragraph')
-    }; 
-    set lead(value) {
-        this.setAttribute('lead', value)
-    }
-
-    get paragraph(){
-        return this.getAttribute("paragraph")
-    };
-    set paragraph(value){
-        this.setAttribute('paragraph', value)
-    };
-
     get img() {
+        console.log("do you fire get img");
         return this.getAttribute("img")
     }
 
     set img(value) {
+        console.log("do you fire set img?");
         this.setAttribute("img", value)
     }
-
-    get list() {
-        return this.getAttribute("list")
-    }
-
 
   
     attributeChangedCallback(attributeName, oldVal, newVal){
@@ -97,21 +80,17 @@ class WindowMacOs extends HTMLElement {
           
      } 
      
-     if(attributeName.toLowerCase()==="lead") {
-        this.shadowRoot.querySelector('p').textContent = newVal;
-     } 
+    //  if(attributeName.toLowerCase()==="lead") {
+    //     this.shadowRoot.querySelector('p').textContent = newVal;
+    //  } 
 
-     if(attributeName.toLowerCase()==="paragraph") {
-        this.shadowRoot.querySelector('p').textContent = newVal;
-     } 
+    //  if(attributeName.toLowerCase()==="paragraph") {
+    //     this.shadowRoot.querySelector('p').textContent = newVal;
+    //  } 
 
-     if(attributeName.toLowerCase() ==="img"){
-        this.shadowRoot.querySelector("img").setAttribute('src',newVal);    
-     }
-
-     if(attributeName.toLowerCase()==="list") {
-        //
-     }
+    //  if(attributeName.toLowerCase() ==="img"){
+    //     this.shadowRoot.querySelector("img").setAttribute('src',newVal);    
+    //  }
 
 
     }
@@ -119,9 +98,9 @@ class WindowMacOs extends HTMLElement {
    
 }
 
-const remove =()=> {
-    document.querySelector("window-mac").remove();
-}
+// const remove =()=> {
+//     document.querySelector("window-mac").remove();
+// }
 
 
 customElements.define('window-mac', WindowMacOs);
