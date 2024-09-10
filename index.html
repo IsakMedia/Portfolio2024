@@ -18,13 +18,13 @@
                     <li>Location: Malmö</li>          
             </ul>
 
-            <a slot="cta">
-                <cta-button mailto="hej@isakmedia.se">Contact</cta-button>
-            </a>
+            <span slot="cta">
+                <cta-button mailto="isak.westerberg@gmail.com">Contact</cta-button>
+            </span>
 
-            <a slot="cta">
-                <cta-button href="www.google.com">Contract</cta-button>
-            </a>
+            <span slot="cta">
+                <cta-button href="https://www.google.com">contact</cta-button>
+            </span>
 
                     
         </window-mac>
@@ -58,29 +58,29 @@
                 Get in <a href="#">touch!</a>
             </p>
 
-            <a slot="cta" href="www.google.com">
-            hello   
-            </a>
+            <div slot="cta-btn">
+                <cta-button mailto="isak.westerberg@gmail.com">Contact</cta-button>
+            </div>
 
-            <div slot="cta"><cta-button> hallå </cta-button></div>
+            <div slot="cta-btn">
+                <cta-button href="https://www.google.com">Contract</cta-button>
+            </div>
            
            
         </window-mac>
        
         
-
-        <window-mac img="./src/images/test-img.png" heading="get some">  </window-mac>
-       
-        <window-mac>
-            <cta-button mailto="hej@isakmedia.se">Contact</cta-button>
+        
+        <window-mac img="./src/images/test-img.png" heading="get some">  
+            <div slot="cta-btn">
+                <cta-button mailto="isak.westerberg@gmail.com">Contact</cta-button>
+            </div>
 
         </window-mac>
-
-        <cta-button mailto="hej@isakmedia.se">Contact</cta-button>
-        <cta-button>Contact</cta-button>
+ 
+       
         
     </main>
-    <!-- <script src="https://unpkg.com/browse/@webcomponents/webcomponentsjs@2.8.0/webcomponents-bundle.js"></script> -->
     <script src="./script.js" type="module"></script>
    
 </body>

@@ -80,13 +80,13 @@ body {
   min-height: 100dvh;
 }
 
-main {
+.main {
   position: relative;
   top: 1rem;
   min-height: 100dvh;
   width: 100%;
 }
-main .window {
+.main .window {
   min-width: 320px;
   margin: 1rem;
   background-color: #D8D8D8;
@@ -94,7 +94,7 @@ main .window {
   padding-bottom: 10px;
   filter: drop-shadow(2px 2px #000);
 }
-main .window .window__header {
+.main .window .window__header {
   background-color: #D8D8D8;
   display: flex;
   align-items: center;
@@ -102,7 +102,7 @@ main .window .window__header {
   position: relative;
   z-index: 99;
 }
-main .window .window__header h2 {
+.main .window .window__header h2 {
   font-size: 1.1rem;
   font-style: normal;
   font-stretch: expanded;
@@ -110,7 +110,7 @@ main .window .window__header h2 {
   padding-block: 10px;
   margin: 0;
 }
-main .window .window__header .btn-border-wrapper {
+.main .window .window__header .btn-border-wrapper {
   position: relative;
   display: flex;
   align-items: center;
@@ -121,7 +121,7 @@ main .window .window__header .btn-border-wrapper {
   border: 1px solid black;
   box-shadow: -1px -1px 0px 0.1px rgba(81, 81, 81, 0.8), 1px 1px 0px 0.1px rgb(255, 255, 255);
 }
-main .window .window__header .window__header__btn {
+.main .window .window__header .window__header__btn {
   background: rgb(255, 255, 255);
   background: linear-gradient(315deg, rgb(255, 255, 255) 0%, rgb(138, 138, 138) 100%);
   height: 25px;
@@ -129,15 +129,15 @@ main .window .window__header .window__header__btn {
   flex: 0 0 auto;
   position: relative;
 }
-main .window .window__header .window__header__btn:active {
+.main .window .window__header .window__header__btn:active {
   background: rgb(255, 255, 255);
   background: linear-gradient(315deg, rgb(147, 147, 147) 0%, rgb(237, 237, 237) 100%);
 }
-main .window .window__header .window__header__btn--close::before {
+.main .window .window__header .window__header__btn--close::before {
   content: "";
   display: inline-block;
 }
-main .window .window__header .window__header__btn--expand::before {
+.main .window .window__header .window__header__btn--expand::before {
   content: "";
   display: inline-block;
   position: relative;
@@ -148,14 +148,14 @@ main .window .window__header .window__header__btn--expand::before {
   border: 1px solid black;
   box-shadow: -1px -1px 0px 0.1px rgba(81, 81, 81, 0.8), 1px 1px 0px 0.1px rgb(255, 255, 255);
 }
-main .window .window__header .window__header__line-box {
+.main .window .window__header .window__header__line-box {
   display: flex;
   flex: 1;
   flex-direction: column;
   width: 100%;
   margin: 0 5px;
 }
-main .window .window__header .window__header__line-box .line-box__line {
+.main .window .window__header .window__header__line-box .line-box__line {
   flex-shrink: 1;
   margin: 1px;
   height: 1px;
@@ -163,7 +163,7 @@ main .window .window__header .window__header__line-box .line-box__line {
   background-color: #696969;
   border-bottom: 1px solid rgb(241, 241, 241);
 }
-main .window .window__body {
+.main .window .window__body {
   display: flex;
   flex-direction: column;
   border: 2px solid black;
@@ -174,19 +174,19 @@ main .window .window__body {
   padding: 1.2rem;
   box-shadow: inset 0px -1px 1px 0px rgba(0, 0, 0, 0.5), inset 0px -1px 1px 0px rgba(0, 0, 0, 0.5), inset 1px 0px 1px 0px rgba(0, 0, 0, 0.5), inset -1px 0px 1px 0px rgba(0, 0, 0, 0.5);
 }
-main .window .window__body h3 {
+.main .window .window__body h3 {
   font-size: 1.5rem;
   align-self: center;
   justify-self: center;
 }
-main .window .window__body p {
+.main .window .window__body p {
   font-size: 1rem;
   margin: 0;
   line-height: 1.5rem;
 }
 
 @media (min-width: 600px) {
-  main .window {
+  .main .window {
     margin: 3rem;
   }
 }/*# sourceMappingURL=style.css.map */

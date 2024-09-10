@@ -236,3 +236,13 @@ now i do storyboards, and i design in figma. and im learning to plan my code. it
 
 9/9
 Button aint behaving as it should. maybe its something wrong in the click event. i want the right attribute to trigger the correct respons. you should be able to write "mailto" and make button into mail-button or "href" to make it a navigation link. console.log()s dont fire
+
+10/9
+
+ive been struggling today. thought i had the hang of it , but nope.
+didnt know if it was suppose to be the component or the parent to controll the styling or semantics.
+chatGPT said it was suppose to be the component (template), but it would be hidden in the shadow dom.
+im not sure. i think my DOM-tree looks awful (and very confusing!!!). but now it looks better.
+i also forgot ive moved the cta-buttons styling to the component so i should change rules there. which requires me
+to rethink some, but also remember stuff.
+I should read this readme more often and not just write in it

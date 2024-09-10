@@ -32,19 +32,9 @@ class WindowMacOs extends HTMLElement {
             this.shadowRoot.querySelector('.about__about-container').appendChild(textBoxTemplate);
         }
 
-       
-        
-
     }
 
-    connectedCallback(){
-        console.log("runs when object is added to the dom");
-    }
-
-    disconnectedCallback(){
-        console.log("disconnect happens when the element 'this', is removed");
-    }
-
+  
     static get observedAttributes(){
         return ["heading", "subheading", "lead", "paragraph", "button", "text", "img"]
     }

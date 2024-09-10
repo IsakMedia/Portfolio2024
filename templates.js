@@ -2,12 +2,15 @@
 export const textBoxTemp = document.createElement('template');
         textBoxTemp.innerHTML=`
                 <div class="about__info-box"> 
-                    <slot name="subheading"></slot>
                     
-                    <slot name="list"></slot>
+                <ul>
+                <slot name="list"></slot>
+                </ul>
                     
-                     
-                    <slot name="cta"></slot>     
+                <a>
+                <slot name="cta"></slot>
+                </a>
+                      
                 </div>
         
         `;
@@ -34,9 +37,15 @@ windowTemp.innerHTML = `
     font-style:italic;  
   }
 
+::slotted([slot="list"]) {
+ list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
 </style>
 <link rel=stylesheet href="./style.min.css">
-<main>
+<div class="main">
     <div class="window">
         <div class="window__header">
             <div class="btn-border-wrapper">
@@ -67,7 +76,7 @@ windowTemp.innerHTML = `
 
 
         <div class="window__body">
-            <div>
+           <div>
                 <h3>
                     <slot name="subheading"></slot>
                 </h3>
@@ -80,11 +89,17 @@ windowTemp.innerHTML = `
                     <slot name="paragraph"></slot>
                 </p>
 
+                <a>
+                <slot name="cta-btn"></slot>
+                </a>
+
+            </div>  
+
                 
-            <div>
+            
         
-            <div id="conditionalDiv">
-            </div>
+            <div id="conditionalDiv"></div>
+            
           
 
                       
@@ -94,8 +109,8 @@ windowTemp.innerHTML = `
        
         </div>
     </div>
-</main>
 
+</div>
 `;
 
 

@@ -1,5 +1,3 @@
-// import { setHref } from "./script";
-
 
 const template = document.createElement('template');
 template.innerHTML = `
@@ -13,6 +11,7 @@ template.innerHTML = `
     padding: 3px 20px;
     border: 1px solid rgb(5, 5, 5);
     box-shadow: 0px 2px 0px 1px rgba(0, 0, 0, 1);
+    margin-top:5px;
     
 }
 
@@ -21,14 +20,17 @@ template.innerHTML = `
     font-size: calc(1rem - 2%);
 }
 
-
+.flex {
+display:flex;
+}
 
 </style>
 
-
-<a class="about__info-box__btn"><slot></slot></a>
+<div class="flex">
+<div class="about__info-box__btn"><slot></slot></div>
+</div>
 `;
-
+// slot here will allow for parents to se the inner text of the buttons
 
 
 export class ctaButton extends HTMLElement {
@@ -41,8 +43,6 @@ export class ctaButton extends HTMLElement {
         
     }
 
-  
-
     static get observedAttributes(){
         return ["text" , "href", "mailto"]
     }
@@ -51,9 +51,10 @@ export class ctaButton extends HTMLElement {
     attributeChangedCallback(attribute, oldVal, newVal){
         console.log(attribute, oldVal,newVal);
 
+       
        if(attribute.toLowerCase() === "mailto"){
         // this.setAttribute('href', newVal);
-        console.log("please fire");
+       
         const mailUrl = this.getAttribute('mailto');
         this.shadowRoot.querySelector('.about__info-box__btn').addEventListener('click', () => {
             if (mailUrl) {
@@ -63,25 +64,16 @@ export class ctaButton extends HTMLElement {
        }
 
        if(attribute.toLowerCase()=== "href") {
-        console.log("please fire");
+
         const url = this.getAttribute('href');
         this.shadowRoot.querySelector('.about__info-box__btn').addEventListener('click', () => {
-            if (mailUrl) {
+            if (url) {
                 window.location.href = url;
             }
         });
        }
     }
 
-    connectedCallback(){
-  
-    }
-
-    render(){
-        
-    }
-
-    
 
 }
 
