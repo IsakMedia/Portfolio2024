@@ -294,7 +294,7 @@ ok so now both the image template and the infobox looks the same. the only diffe
 
 do i want an image to be set in as an attribute? why would if id make a grid? i i dont want to create something like
 `<window-mac img1="./isak.jpg" img2="./jpg" img1="./isak.jpg" img2="./jpg" img1="./isak.jpg" img2="./jpg">` right?!?!
-or should i just have like `<window-mac CoverPic="./pictureWithownstyling" grid>` and set the cover pic with its own styling and after that the component would not care what images what would be added in a cell.
+or should i just have like `<window-mac CoverPic="./pictureWithownstyling" grid>` and set the cover pic with its own styling, then everything else in the cells / cellgrid is of no concern to the web-component or its attributes
 
 maybe i should be able to set a coverphoto and it sets picture without giving it any about_box styling.
 and then figuer out how to make mac-cells out of the rest.
