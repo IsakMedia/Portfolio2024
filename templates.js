@@ -19,13 +19,14 @@ export const textBoxTemp = document.createElement('template');
 export const imageBoxTemp = document.createElement('template');
         imageBoxTemp.innerHTML=`  
                         <div class="about__image-box">
-                            <div class="about__image-box__profile-box">
+                           
                             <img/>
-                            </div>
+                            
                         </div>
                         
             `;
 
+            //  <div class="about__image-box__profile-box">
 //<div class="about__about-container">
 
 export const windowTemp = document.createElement('template');

@@ -283,6 +283,10 @@ I should read this readme more often and not just write in it
 
 12/9
 
+Ok so that  **.about__info-box** and **.about__image-box** does basically the same thing and looks like it can be given
+the same rules. **.about_box** i suppose. though the image box will include another div with image specific rules
+and i guess the same with the info-box. so as of right now, i dont really see how one class less makes much difference.
+
 ## known bugs
 
 * links send you straight to target url (should preferably open in new tab. saw somone somewhere say you should mess with default behaviours. though i feel like tab behaviour is more more common now and also "please stay at my site)
