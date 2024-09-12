@@ -287,6 +287,19 @@ Ok so that  **.about__info-box** and **.about__image-box** does basically the sa
 the same rules. **.about_box** i suppose. though the image box will include another div with image specific rules
 and i guess the same with the info-box. so as of right now, i dont really see how one class less makes much difference.
 
+i wonder if i should make component that is basically a "cell" component. like theres an attribute for like [grid],
+and if its added you need to include <mac-cell img="./me.jpg"></max-cell> and each <mac-cell> is placed on a growing 3x^ grid that will scale accordingly. and is given the (new) .about__box class.
+
+ok so now both the image template and the infobox looks the same. the only difference is that one has an img tag in it and the other dont. What do i want with my component?
+
+do i want an image to be set in as an attribute? why would if id make a grid? i i dont want to create something like
+<window-mac img1="./isak.jpg" img2="./jpg" img1="./isak.jpg" img2="./jpg" img1="./isak.jpg" img2="./jpg"> right?!?!
+or should i just have like <window-mac CoverPic="./pictureWithownstyling" grid> and set the cover pic with its own styling and after that the component would not care what images what would be added in a cell.
+
+maybe i should be able to set a coverphoto and it sets picture without giving it any about_box styling.
+and then figuer out how to make mac-cells out of the rest.
+I should take a run and think about this. Anyways Templates first
+
 ## known bugs
 
 * links send you straight to target url (should preferably open in new tab. saw somone somewhere say you should mess with default behaviours. though i feel like tab behaviour is more more common now and also "please stay at my site)

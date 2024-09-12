@@ -1,8 +1,8 @@
 
 export const textBoxTemp = document.createElement('template');
         textBoxTemp.innerHTML=`
-                <div class="about__info-box"> 
-                    
+                <div class="about__box">  
+                             
                 <ul>
                 <slot name="list"></slot>
                 </ul>
@@ -18,16 +18,13 @@ export const textBoxTemp = document.createElement('template');
 
 export const imageBoxTemp = document.createElement('template');
         imageBoxTemp.innerHTML=`  
-                        <div class="about__image-box">
-                           
-                            <img/>
-                            
+                        <div class="about__box">                
+                            <img/>                        
                         </div>
                         
             `;
 
-            //  <div class="about__image-box__profile-box">
-//<div class="about__about-container">
+          
 
 export const windowTemp = document.createElement('template');
 windowTemp.innerHTML = `
