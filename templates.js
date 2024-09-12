@@ -44,7 +44,7 @@ windowTemp.innerHTML = `
 }
 
 </style>
-<link rel=stylesheet href="./style.min.css">
+<link rel=stylesheet href="./style.css">
 <div class="main">
     <div class="window">
         <div class="window__header">

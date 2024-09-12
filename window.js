@@ -39,33 +39,6 @@ class WindowMacOs extends HTMLElement {
         return ["heading", "subheading", ]
     }
     
-    get heading(){
-        return this.getAttribute('heading');
-    };
-
-    set heading(value) {
-        this.setAttribute("heading", value )
-       
-    };
-
-    get subheading(){
-        return this.getAttribute('subheading')
-    };
-
-    set subheading(value){
-        this.setAttribute('subheading', value);
-    }
-
-    get img() {
-        console.log("do you fire get img");
-        return this.getAttribute("img")
-    }
-
-    set img(value) {
-        console.log("do you fire set img?");
-        this.setAttribute("img", value)
-    }
-
   
     attributeChangedCallback(attributeName, oldVal, newVal){
 
@@ -80,27 +53,12 @@ class WindowMacOs extends HTMLElement {
           
      } 
      
-    //  if(attributeName.toLowerCase()==="lead") {
-    //     this.shadowRoot.querySelector('p').textContent = newVal;
-    //  } 
-
-    //  if(attributeName.toLowerCase()==="paragraph") {
-    //     this.shadowRoot.querySelector('p').textContent = newVal;
-    //  } 
-
-    //  if(attributeName.toLowerCase() ==="img"){
-    //     this.shadowRoot.querySelector("img").setAttribute('src',newVal);    
-    //  }
 
 
     }
     
    
 }
-
-// const remove =()=> {
-//     document.querySelector("window-mac").remove();
-// }
 
 
 customElements.define('window-mac', WindowMacOs);

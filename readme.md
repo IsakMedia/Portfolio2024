@@ -3,6 +3,37 @@
 there are two components
 <window-mac>
 <cta-button>
+use the attribute slot="" to set content of a component.
+the components have component-specific attributes and slot names.
+
+## <window-mac>
+
+window-mac have these attributes you can use
+*"heading", "subheading", "img", "list"* ( *list* requires no value)
+<window-mac heading="hello" subheading="welcome" img="/image.jpg">
+
+<window-mac> uses these slot names:
+*lead* = gives a cursive lead before a longer text
+*paragraph* = gives a standard paragraph
+*cta* = lets you put a <cta-button> inside your window
+
+ex:
+<winow-mac>
+<div slot="cta">
+    <cta-button></cta-button>
+</div>
+</window-mac>
+
+## <cta-button>
+
+cta-button have these attributes you can use
+*"mailto", "href"*
+it does not however have a specific slot name. just type the text as you would usually do with a standard html button
+<cta-button>my text</cta-button>
+
+cta buttons have two usecases
+<cta-button mailto="google@gmail.com">my text</cta-button>  // will open installed mail client on clients machine
+<cta-button href="https://www.google.com">google</cta-button> // will send you straight to target url
 
 ## helpers
 
@@ -88,7 +119,7 @@ hmm, dont know if i want it to be hidden or in the source-code just like an east
 
 ### boiler-plate html for later use
 
-<section class="contact">
+`<section class="contact">
             <div class="window">
                 <div class="window__header">
                     <div class="btn-border-wrapper">
@@ -136,11 +167,11 @@ hmm, dont know if i want it to be hidden or in the source-code just like an east
                     </section>
                 </div>
             </div>
-        </section>  
+        </section>`
 
 ## if attribute is added. example "image-box"
 
-attributeChangeCallback(name, oldVal, newVal){
+`attributeChangeCallback(name, oldVal, newVal){
     if(newVal ==="null") {
         // if theres no attribute named "img" it will return "null"
         so if null, do nothing.
@@ -150,7 +181,7 @@ attributeChangeCallback(name, oldVal, newVal){
         newImg.setAttribute("img", value)
         // maybe i need to use this. here to get the current value of components img attribute
     }
-}
+}`
 
 <window-mac img="./isak.jpg">
 
@@ -249,3 +280,41 @@ im not sure. i think my DOM-tree looks awful (and very confusing!!!). but now it
 i also forgot ive moved the cta-buttons styling to the component so i should change rules there. which requires me
 to rethink some, but also remember stuff.
 I should read this readme more often and not just write in it
+
+12/9
+
+## known bugs
+
+* links send you straight to target url (should preferably open in new tab. saw somone somewhere say you should mess with default behaviours. though i feel like tab behaviour is more more common now and also "please stay at my site)
+
+* the <cta-button> allows for highlighting innerText
+* the <cta-button> allows to be clicked multiple times in a row spawning possibly more windows than needed
+* the <cta-button> does not on hover tell you the location of where the link will take you
+
+* none of my buttons (any button) allow for activation on enter
+* button have no or diminishable outline on focus which makes it hard to see
+* <cta-button> has no tab-index / cant be tabbed to
+
+// structure
+
+* The [list] attribute on <window-mac> doesnt make much sense as it is.
+not sure exactly but feels like the classes **.about__info-box** and **.about__image-box** does the same thing
+right now its not possible to create more than two boxes, and they have either have to be a [list] or a [img] but can not be more than one of the type. i.e cant be two images or two lists.
+which is weirdly restricting.
+
+* a component contains its different slots even if they're empty as default. which feels like bad html.
+like the page gets cluttred with invisible p, a and image tags. doesnt seem very accessible to me
+
+## whats missing fam?
+
+* windows should be able to drag and drop around, able to be layered over one another without pulling both windows
+only window in the top of the stack should be targetted
+
+* corner buttons should be able to close and minimize windows. the design should become compacter when you do.
+
+* there should be a nav bar at the top, that will allow you to toggle closed windows back on.
+and also being able to jump straight down to what ever window you'd like to see.
+
+### you know what would be cool though?
+
+* just a lil function that sets my age by year, new Date(), should be easy enough "🙂" so i dont have to hard code it

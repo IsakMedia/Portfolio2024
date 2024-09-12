@@ -37,23 +37,20 @@ export class ctaButton extends HTMLElement {
     constructor(){
         super();
         this.attachShadow({mode:'open'})
-        this.getAttribute("text")
+        // this.getAttribute("text")
         this.getAttribute("href")
         this.shadowRoot.appendChild(template.content.cloneNode(true))
         
     }
 
     static get observedAttributes(){
-        return ["text" , "href", "mailto"]
+        return ["href", "mailto"]
     }
 
 
     attributeChangedCallback(attribute, oldVal, newVal){
-        console.log(attribute, oldVal,newVal);
 
-       
        if(attribute.toLowerCase() === "mailto"){
-        // this.setAttribute('href', newVal);
        
         const mailUrl = this.getAttribute('mailto');
         this.shadowRoot.querySelector('.about__info-box__btn').addEventListener('click', () => {
