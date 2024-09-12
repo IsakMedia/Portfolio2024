@@ -1,39 +1,39 @@
 # How to use
 
 there are two components
-<window-mac>
-<cta-button>
+`<window-mac>`
+ `<cta-button>`
 use the attribute slot="" to set content of a component.
 the components have component-specific attributes and slot names.
 
-## <window-mac>
+## `<window-mac>`
 
 window-mac have these attributes you can use
 *"heading", "subheading", "img", "list"* ( *list* requires no value)
-<window-mac heading="hello" subheading="welcome" img="/image.jpg">
+`<window-mac heading="hello" subheading="welcome" img="/image.jpg">`
 
-<window-mac> uses these slot names:
+`<window-mac>` uses these slot names:
 *lead* = gives a cursive lead before a longer text
 *paragraph* = gives a standard paragraph
-*cta* = lets you put a <cta-button> inside your window
+*cta* = lets you put a  `<cta-button>`  inside your window
 
 ex:
-<winow-mac>
-<div slot="cta">
-    <cta-button></cta-button>
-</div>
-</window-mac>
+`<winow-mac>`
+`<div slot="cta">`
+`<cta-button> </cta-button>`
+`</div>`
+`</window-mac>`
 
-## <cta-button>
+## `<cta-button>`
 
 cta-button have these attributes you can use
 *"mailto", "href"*
 it does not however have a specific slot name. just type the text as you would usually do with a standard html button
-<cta-button>my text</cta-button>
+`<cta-button>my text</cta-button>`
 
 cta buttons have two usecases
-<cta-button mailto="google@gmail.com">my text</cta-button>  // will open installed mail client on clients machine
-<cta-button href="https://www.google.com">google</cta-button> // will send you straight to target url
+`<cta-button mailto="google@gmail.com">my text</cta-button>`  // will open installed mail client on clients machine
+`<cta-button href="https://www.google.com">google</cta-button>` // will send you straight to target url
 
 ## helpers
 
@@ -58,8 +58,8 @@ switching between computers. so maybe i solve this some day. Anyways something t
 
 * maybe i cant use scss as i want to, or webcomponents. im not sure yet. I really didnt want to use any npm packages for this project, keeping everything as "vanilla" as possible (except for sass, gotta have sass). Maybe this project will get me closer to understand the usefullness of bundlers and maybe wth webpack is?
 
-* can i go over my shadow dom and check if it contains any <img> tags, to add a default alt="", property. Or makes it more sense to find a way to force who ever (me proably) who want to use my web-component to add an alt="" if they want to
-include an <img> or <svg>
+* can i go over my shadow dom and check if it contains any `<img>` tags, to add a default alt="", property. Or makes it more sense to find a way to force who ever (me proably) who want to use my web-component to add an alt="" if they want to
+include an `<img>` or `<svg>`
 
 ## What am i using ChatGPT for?
 
@@ -71,7 +71,7 @@ include an <img> or <svg>
 * still struggling with flexbox flex growth. also asked it to do some math even though i know LLMs do math bad
 but i figuer that LLMs might be able to give me the formula to solve it, and then i can ask (or figuer out)
 the proper way to solve it somewhere else.
-* As i hard code in my about text i asked the bot to help me place <p> tags where ever it felt it should be
+* As i hard code in my about text i asked the bot to help me place `<p>` tags where ever it felt it should be
 a little breathers in my text.
 * my html didnt work, hard to look at my tiny screen figuering out want tags has been closed off or missing its closing tag and so on. the Bot solves it
 
@@ -183,7 +183,7 @@ hmm, dont know if i want it to be hidden or in the source-code just like an east
     }
 }`
 
-<window-mac img="./isak.jpg">
+`<window-mac img="./isak.jpg">`
 
 setAttribute
 
@@ -218,13 +218,13 @@ Guess what i did?
 if only child - render stuff with all them classes
 if sibling - only the image-box
 
-<section class="about">
-<div class=".about__about-container">
+`<section class="about">`
+`<div class=".about__about-container">`
 // image needs these container classes to look proper
 // text box need these container classes to look proper
 // if there is both an image and a textbox, there should be only one about and about-container class
-</div>
-</section>
+`</div>`
+`</section>`
 
 there is a super simple answer to this. i know it. but brain is mushy and i am stupid. Thats ok. i should go for a run
 and think about it.
@@ -249,7 +249,7 @@ eyes on the prices (the price in this case is the same price as "play stupid gam
 i will name this project "how to pwn yourself 101"
 
 30/8
- i got multiple <main>
+ i got multiple `<main>`
  today i learned dont do markup first.
 
 ## hard truths
@@ -288,13 +288,13 @@ the same rules. **.about_box** i suppose. though the image box will include anot
 and i guess the same with the info-box. so as of right now, i dont really see how one class less makes much difference.
 
 i wonder if i should make component that is basically a "cell" component. like theres an attribute for like [grid],
-and if its added you need to include <mac-cell img="./me.jpg"></max-cell> and each <mac-cell> is placed on a growing 3x^ grid that will scale accordingly. and is given the (new) .about__box class.
+and if its added you need to include `<mac-cell img="./me.jpg"></max-cell>` and each `<mac-cell>` is placed on a growing 3x^ grid that will scale accordingly. and is given the (new) .about__box class.
 
 ok so now both the image template and the infobox looks the same. the only difference is that one has an img tag in it and the other dont. What do i want with my component?
 
 do i want an image to be set in as an attribute? why would if id make a grid? i i dont want to create something like
-<window-mac img1="./isak.jpg" img2="./jpg" img1="./isak.jpg" img2="./jpg" img1="./isak.jpg" img2="./jpg"> right?!?!
-or should i just have like <window-mac CoverPic="./pictureWithownstyling" grid> and set the cover pic with its own styling and after that the component would not care what images what would be added in a cell.
+`<window-mac img1="./isak.jpg" img2="./jpg" img1="./isak.jpg" img2="./jpg" img1="./isak.jpg" img2="./jpg">` right?!?!
+or should i just have like `<window-mac CoverPic="./pictureWithownstyling" grid>` and set the cover pic with its own styling and after that the component would not care what images what would be added in a cell.
 
 maybe i should be able to set a coverphoto and it sets picture without giving it any about_box styling.
 and then figuer out how to make mac-cells out of the rest.
@@ -304,17 +304,17 @@ I should take a run and think about this. Anyways Templates first
 
 * links send you straight to target url (should preferably open in new tab. saw somone somewhere say you should mess with default behaviours. though i feel like tab behaviour is more more common now and also "please stay at my site)
 
-* the <cta-button> allows for highlighting innerText
-* the <cta-button> allows to be clicked multiple times in a row spawning possibly more windows than needed
-* the <cta-button> does not on hover tell you the location of where the link will take you
+* the  `<cta-button>`  allows for highlighting innerText
+* the  `<cta-button>`  allows to be clicked multiple times in a row spawning possibly more windows than needed
+* the  `<cta-button>`  does not on hover tell you the location of where the link will take you
 
 * none of my buttons (any button) allow for activation on enter
 * button have no or diminishable outline on focus which makes it hard to see
-* <cta-button> has no tab-index / cant be tabbed to
+* `<cta-button>`  has no tab-index / cant be tabbed to
 
 // structure
 
-* The [list] attribute on <window-mac> doesnt make much sense as it is.
+* The [list] attribute on `<window-mac>` doesnt make much sense as it is.
 not sure exactly but feels like the classes **.about__info-box** and **.about__image-box** does the same thing
 right now its not possible to create more than two boxes, and they have either have to be a [list] or a [img] but can not be more than one of the type. i.e cant be two images or two lists.
 which is weirdly restricting.
