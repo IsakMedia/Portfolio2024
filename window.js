@@ -1,4 +1,4 @@
- import {windowTemp, imageBoxTemp, textBoxTemp} from './templates.js'
+ import {windowTemp, imageBoxTemp, textBoxTemp, boxTemp} from './templates.js'
 
 
 class WindowMacOs extends HTMLElement {
@@ -12,12 +12,21 @@ class WindowMacOs extends HTMLElement {
     render(){
         const hasImg = this.hasAttribute('img');
         const hasList = this.hasAttribute('list');
+        const hasCol = this.hasAttribute('col');
         this.shadowRoot.innerHTML = '';
         this.shadowRoot.appendChild(windowTemp.content.cloneNode(true));
   
        
-        if (hasImg || hasList) {
+        if (hasImg || hasList || hasCol) {
             this.shadowRoot.querySelector('#conditionalDiv').classList.add("about__about-container");
+        }
+
+        if(hasCol) {
+            const imgSrc = this.getAttribute('img');
+            const boxTemplate = boxTemp.content.cloneNode(true);
+            // now it looks for an img tag in the template, but should look for an img in the document
+            // but im guessing, an img in this.shadowRoot about__about-container
+            boxTemplate.querySelector('img') ? boxTemplate.querySelector('img').src = imgSrc : null;
         }
        
         if (hasImg) {
@@ -25,6 +34,7 @@ class WindowMacOs extends HTMLElement {
             const imageTemplate = imageBoxTemp.content.cloneNode(true);
             imageTemplate.querySelector('img').src = imgSrc;
             this.shadowRoot.querySelector('.about__about-container').appendChild(imageTemplate);
+
 
         } 
         if (hasList) {
@@ -36,7 +46,7 @@ class WindowMacOs extends HTMLElement {
 
   
     static get observedAttributes(){
-        return ["heading", "subheading", ]
+        return ["heading", "subheading", "col" ]
     }
     
   
@@ -52,6 +62,11 @@ class WindowMacOs extends HTMLElement {
         this.shadowRoot.querySelector('h3').textContent = newVal;
           
      } 
+
+     if(attributeName.toLowerCase()==="grid"){
+
+
+     }
      
 
 

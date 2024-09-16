@@ -1,16 +1,19 @@
+export const boxTemp = document.createElement('template');
+        boxTemp.innerHTML=`
+                <div class="about__box">   
+                    <slot name="list"></slot>
+                    <slot name="cta"></slot>
+                    <slot name="img"><slot>       
+                </div>
+        
+        `;
+
 
 export const textBoxTemp = document.createElement('template');
         textBoxTemp.innerHTML=`
-                <div class="about__box">  
-                             
-                <ul>
-                <slot name="list"></slot>
-                </ul>
-                    
-                <a>
-                <slot name="cta"></slot>
-                </a>
-                      
+                <div class="about__box">   
+                    <slot name="list"></slot>
+                    <slot name="cta"></slot>       
                 </div>
         
         `;
@@ -19,7 +22,8 @@ export const textBoxTemp = document.createElement('template');
 export const imageBoxTemp = document.createElement('template');
         imageBoxTemp.innerHTML=`  
                         <div class="about__box">                
-                            <img/>                        
+                            <img/>
+                                            
                         </div>
                         
             `;

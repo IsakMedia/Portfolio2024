@@ -9,6 +9,22 @@
 </head>
 <body>
     <main>
+        <header>
+            <nav class="main-nav">
+                <div class="left-nav">
+                    <a  href="https://github.com/IsakMedia" target="_blank"><img src="./src/images/github-mark/github-mark.svg"/></a>
+                    <ul>
+                        <li data-name="first">info</li>
+                        <li data-name="second">about</li>
+                        <li data-name="third">portfolio</li>
+                        <li data-name="fourth"></li>
+                    </ul>
+                </div>
+                <div class="right-nav">
+                    <span id="clock">00:00</span>
+                </div>
+            </nav>
+        </header>
 
         <window-mac heading="Quick facts" img="./src/images/isak.png" list>
                      
@@ -61,7 +77,7 @@
         
         
         <window-mac heading="get some" subheading="stuff" list>  
-            <ul slot="list">
+            <div slot="list">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus sunt repellendus molestias consequatur adipisci, voluptatibus neque odit fugiat officiis, sapiente dicta! Magni officia ipsum delectus ad dolorum, eos eveniet maxime.
                 Fugit assumenda suscipit totam corporis? Ducimus distinctio non harum possimus numquam quidem enim iure amet dolorem modi id, sit repellat debitis tenetur voluptatibus fuga excepturi minima! Dicta inventore voluptatem ex.
                 Temporibus accusantium itaque est aliquam ducimus odio iste! Labore cupiditate nesciunt voluptas, assumenda dicta natus nobis eligendi ab sint nisi, architecto rem at. Voluptatum consectetur deleniti porro aut, saepe quis.
@@ -72,12 +88,20 @@
                 Voluptas, consequatur. Fugit odit enim modi! Optio aut, commodi dicta asperiores numquam deserunt eaque ex quae, tempore cupiditate, minima possimus atque delectus consequuntur unde veritatis doloribus. Saepe suscipit dolore hic.
                 Porro repellat quaerat commodi soluta magni nisi temporibus quia laborum fugiat, quasi, reiciendis ducimus harum fugit, eius eum ipsa dignissimos nam! Odit recusandae doloremque aliquid maxime dolorum molestias voluptates minima.
                 Minima consequatur ullam blanditiis quia. Pariatur laboriosam officia saepe earum omnis tenetur soluta accusamus qui aperiam sequi maiores quam et corporis, quod quidem ex vitae rerum necessitatibus, dignissimos assumenda. Odit?
+                <cta-button href="#">sup</cta-button>
+            </div>
 
-            </ul>
+          
+            
            
         </window-mac>
 
-        <window-mac heading="get some" subheading="stuff" img="./src/images/test-img.png"></window-mac>
+        <window-mac heading="get some" subheading="stuff"  grid img="./src/images/test-img.png">
+            <div slot="img">
+
+                <img src="./src/images/test-img.png"/>
+            </div>
+        </window-mac>
  
        
     </main>

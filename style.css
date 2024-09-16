@@ -1,4 +1,47 @@
 @import url("https://fonts.cdnfonts.com/css/chicago-2");
+
+/* NAV */
+
+.main-nav {
+  position: relative;
+  top:0;
+  height:2rem;
+  background-color: #D8D8D8;
+  outline: 1px solid rgb(0, 0, 0);
+  padding-bottom: 10px;
+  filter: drop-shadow(2px 2px rgb(0, 0, 0));
+}
+
+.left-nav {
+  display: flex;
+  
+}
+
+.right-nav {
+  display: flex;
+}
+
+.main-nav ul {
+  padding:0;
+  display: flex;
+  list-style-type: none;
+  gap:10px;
+  margin:10px;
+}
+
+.main-nav ul li:hover {
+color:#D8D8D8;
+background-color: #000;
+height:2rem;
+padding:2px;
+}
+
+.main-nav img {
+ margin:5px 0 0 5px;
+ height:2rem;
+}
+
+
 .about__about-container {
   display: flex;
   gap: 10px;
@@ -66,11 +109,6 @@
   color: #3A3A3A;
 }
 
-:root body img {
-  width:100% !important;
-  object-fit: cover !important;
-  background-color: #D8D8D8 !important;
-}
 
 body {
   padding: 0;

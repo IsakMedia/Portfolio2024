@@ -119,7 +119,8 @@ hmm, dont know if i want it to be hidden or in the source-code just like an east
 
 ### boiler-plate html for later use
 
-`<section class="contact">
+```html
+<section class="contact">
             <div class="window">
                 <div class="window__header">
                     <div class="btn-border-wrapper">
@@ -167,7 +168,8 @@ hmm, dont know if i want it to be hidden or in the source-code just like an east
                     </section>
                 </div>
             </div>
-        </section>`
+        </section>
+    ```
 
 ## if attribute is added. example "image-box"
 
@@ -218,13 +220,15 @@ Guess what i did?
 if only child - render stuff with all them classes
 if sibling - only the image-box
 
-`<section class="about">`
-`<div class=".about__about-container">`
+```html
+<section class="about">
+<div class=".about__about-container">
 // image needs these container classes to look proper
 // text box need these container classes to look proper
 // if there is both an image and a textbox, there should be only one about and about-container class
-`</div>`
-`</section>`
+</div>
+</section>
+```
 
 there is a super simple answer to this. i know it. but brain is mushy and i am stupid. Thats ok. i should go for a run
 and think about it.
@@ -251,6 +255,44 @@ i will name this project "how to pwn yourself 101"
 30/8
  i got multiple `<main>`
  today i learned dont do markup first.
+
+ 16/9
+ is giving the option of col="2" col="3", something i want. Giving options to set how many columns of little boxes ill allow. and will they only be applied to desktop and never mobile. this sounds like it makes most sense.
+ i also gotta decide how to do about images. i think i want this
+
+ ok so this is it. right now. you want to set **about__box** to each element in the html so that they dont end up in the same box. how do i need to do that. or at least make sure the image gets its own.
+
+ ```html
+ <window-mac col=2>
+    <img src=""/>
+    <p>some text that be cool<p>
+  </window-mac>
+  ```
+
+  which would turn into basically:
+
+   ```html
+ <window-mac col=2>
+    <div class="about__box">
+        <img src=""/>
+    </div>
+    <div class="about__box">
+        <p>some text that be cool<p>
+    </div>
+  </window-mac>
+  ```
+
+  maybe theres a loop somewhere who could do it. forEach node-children
+  isnt there a way to get all nodes as a readOnly. hhmhmmh
+  for each node of nodelist
+   .append(".about__box") or something. will it place the element within it?
+   i want to say yes, but im out of human-fuel
+
+  if theres a col attribute it will add that nice little box-styling i use on my info-box
+  and if there isnt a col attribute, it got that default paragraph styling? i need to think further about this
+  because it feels like (with my track record) that this isnt enough
+
+* should i have an img (coverImg?) attribute in my window-mac component and should it give a fullwith coverImage
 
 ## hard truths
 
@@ -287,7 +329,7 @@ Ok so that  **.about__info-box** and **.about__image-box** does basically the sa
 the same rules. **.about_box** i suppose. though the image box will include another div with image specific rules
 and i guess the same with the info-box. so as of right now, i dont really see how one class less makes much difference.
 
-i wonder if i should make component that is basically a "cell" component. like theres an attribute for like [grid],
+i wonder if i should make component that is basically a "cell" component. like theres an attribute for example [grid],
 and if its added you need to include `<mac-cell img="./me.jpg"></max-cell>` and each `<mac-cell>` is placed on a growing 3x^ grid that will scale accordingly. and is given the (new) .about__box class.
 
 ok so now both the image template and the infobox looks the same. the only difference is that one has an img tag in it and the other dont. What do i want with my component?
@@ -298,36 +340,51 @@ or should i just have like `<window-mac CoverPic="./pictureWithownstyling" grid>
 
 maybe i should be able to set a coverphoto and it sets picture without giving it any about_box styling.
 and then figuer out how to make mac-cells out of the rest.
-I should take a run and think about this. Anyways Templates first
+I should take a run and think about this. Anyways Templates first^
+
+16/9
+Maybe i shouldnt speculate in whats wrong with me, you know personally. Not because its dwelling on my own self esteem but because im probably wrong anyways, i mean my track record in doing reasonable conclusions isnt that great. at best pretty embarrasing. (for example that i threw out perfectly good scss just because something didnt work and i got upset) i guess this little paragraph is a textbook example of what you should put in your .gitignore. No future employer should read this. Anyways..
+
+i think my main problem developing this is that i havent planned to begin with what i want on this site and what i want each component to do. So even if i use them (the web components) in the wrong way (as a react component),
+the main problem is that i dont have a clear picture of what i want them to do, how they should work and what their limitations should be. I think ive always been aware of that i do redundant stuff and something unecessary complex for basically a static portfolio page (somehow believing the a future employer would 1. read all this, 2. appriciate the meta of "its not about what the portfolio contains, but how its made"). Sorry about the Disclaimer, again.
+
+right now it feels like i deconstruct everything ive done, is it even a web-component right now? does it matter. the point is learning. And if i regress in understanding code, i least learn some more markdown writing this.
+
+another hard truth is that im not capable of doing a lot of different threads at the same time (even if im bored and its fun). like dont do different branches or do it in another project. because you get so many loose ends. like that nav of yours
 
 ## known bugs
 
-* links send you straight to target url (should preferably open in new tab. saw somone somewhere say you should mess with default behaviours. though i feel like tab behaviour is more more common now and also "please stay at my site)
+>[!IMPORTANT]
 
-* the  `<cta-button>`  allows for highlighting innerText
-* the  `<cta-button>`  allows to be clicked multiple times in a row spawning possibly more windows than needed
-* the  `<cta-button>`  does not on hover tell you the location of where the link will take you
+[] links send you straight to target url (should preferably open in new tab. saw somone somewhere say you should mess with default behaviours. though i feel like tab behaviour is more more common now and also "please stay at my site)
 
-* none of my buttons (any button) allow for activation on enter
-* button have no or diminishable outline on focus which makes it hard to see
-* `<cta-button>`  has no tab-index / cant be tabbed to
+[] the  `<cta-button>`  allows for highlighting innerText
+[] the  `<cta-button>`  allows to be clicked multiple times in a row spawning possibly more windows than needed
+[] the  `<cta-button>`  does not on hover tell you the location of where the link will take you
+[] it needs to have a pointer on hover too
+
+[] none of my buttons (any button) allow for activation on enter
+[] button have no or diminishable outline on focus which makes it hard to see
+[] `<cta-button>`  has no tab-index / cant be tabbed to
 
 // structure
 
-* The [list] attribute on `<window-mac>` doesnt make much sense as it is.
+The [list] attribute on `<window-mac>` doesnt make much sense as it is.
 not sure exactly but feels like the classes **.about__info-box** and **.about__image-box** does the same thing
 right now its not possible to create more than two boxes, and they have either have to be a [list] or a [img] but can not be more than one of the type. i.e cant be two images or two lists.
 which is weirdly restricting.
+> you should remove [img] and [list] attributes and use [col] instead. if theres a col give em the boxes.
 
 * a component contains its different slots even if they're empty as default. which feels like bad html.
 like the page gets cluttred with invisible p, a and image tags. doesnt seem very accessible to me
+ [x] > bro, just dont wrap html-tags around the slots in the *templates* if its not mandatory
 
 ## whats missing fam?
 
 * windows should be able to drag and drop around, able to be layered over one another without pulling both windows
 only window in the top of the stack should be targetted
 
-* corner buttons should be able to close and minimize windows. the design should become compacter when you do.
+* corner buttons should be able to close and minimize windows. the design should collapse when you do.
 
 * there should be a nav bar at the top, that will allow you to toggle closed windows back on.
 and also being able to jump straight down to what ever window you'd like to see.
