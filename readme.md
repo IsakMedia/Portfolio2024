@@ -367,6 +367,9 @@ another hard truth is that im not capable of doing a lot of different threads at
 [] button have no or diminishable outline on focus which makes it hard to see
 [] `<cta-button>`  has no tab-index / cant be tabbed to
 
+[] the clock should be displayed in either AM/PM or 24hour, depending on browser language. Probably the
+Navigator.languages method
+
 // structure
 
 The [list] attribute on `<window-mac>` doesnt make much sense as it is.

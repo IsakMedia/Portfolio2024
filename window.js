@@ -22,11 +22,16 @@ class WindowMacOs extends HTMLElement {
         }
 
         if(hasCol) {
-            const imgSrc = this.getAttribute('img');
+            // right yes, this is the problem, i want to set one .about__box to each element inside of the <window-mac>
             const boxTemplate = boxTemp.content.cloneNode(true);
-            // now it looks for an img tag in the template, but should look for an img in the document
-            // but im guessing, an img in this.shadowRoot about__about-container
-            boxTemplate.querySelector('img') ? boxTemplate.querySelector('img').src = imgSrc : null;
+            this.shadowRoot.querySelector('.about__about-container').appendChild(boxTemplate);
+            const setImg = this.shadowRoot.querySelector('.about__box');
+
+
+            // what is this for? i want to set img src in html oldschool style
+            // setImg.querySelector('img') ? setImg.querySelector('img').src = imgSrc : null;
+            
+
         }
        
         if (hasImg) {
