@@ -2,7 +2,10 @@ import * as windowMac from './window.js';
 import * as ctaButton from './ctaButton.js'
 
 
-// global scripts
+// GLOBAL SCRIPTS
+
+
+// clock
 const clock = document.querySelector('#clock');
 
 const displayClock = () => {
@@ -15,6 +18,20 @@ clock.innerText = displayClock();
 setInterval(() => {
     clock.innerText = displayClock();
 }, 1000);
+
+
+// my age
+const ageNumber = document.querySelector("#myAge");
+
+const setMyAge = () => {
+    const year = new Date();
+    const currentYear = year.getFullYear()
+    return currentYear - 1989;
+    
+}
+
+ageNumber.innerHTML = `<li>Age: ${setMyAge()}`;
+
 
 
 console.log("Hello and welcome to the console!");

@@ -1,4 +1,7 @@
- 
+
+import { windowTemp, imageBoxTemp, textBoxTemp } from "./templates.js";
+
+
 const macOsTemplate = document.createElement('template');
 macOsTemplate.innerHTML = `
 <style> 
@@ -76,7 +79,6 @@ class WindowMacOs extends HTMLElement {
         super(); 
         this.attachShadow({mode:'open'});  
         this.render();
-   
     }
   
     render(){
