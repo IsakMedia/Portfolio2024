@@ -257,7 +257,7 @@ i will name this project "how to pwn yourself 101"
  today i learned dont do markup first.
 
  16/9
- is giving the option of col="2" col="3", something i want. Giving options to set how many columns of little boxes ill allow. and will they only be applied to desktop and never mobile. this sounds like it makes most sense.
+ is giving the option of col="2" col="3", something i want. Giving options to set how many columns of little boxes i'll allow. and will they only be applied to desktop and never mobile. this sounds like it makes most sense.
  i also gotta decide how to do about images. i think i want this
 
  ok so this is it. right now. you want to set **about__box** to each element in the html so that they dont end up in the same box. how do i need to do that. or at least make sure the image gets its own.
@@ -293,6 +293,11 @@ i will name this project "how to pwn yourself 101"
   because it feels like (with my track record) that this isnt enough
 
 * should i have an img (coverImg?) attribute in my window-mac component and should it give a fullwith coverImage
+
+7/10
+add attribute role="link" to your buttons with href, so that screen readers can get it. see if it fixes the
+problem with not showing where links goes in bottom left corner when over. if not is there a way to change the
+button to a ```<a>``` when its used as a link. this doesnt feel right though.
 
 ## hard truths
 

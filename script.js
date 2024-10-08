@@ -29,8 +29,26 @@ const setMyAge = () => {
     return currentYear - 1989;
     
 }
-
 ageNumber.innerHTML = `<li>Age: ${setMyAge()}`;
+
+// button enter styling
+// IT DOESNT WORK
+document.addEventListener("DOMContentLoaded", () => {
+const btnEnterNode = document.querySelectorAll('button');
+console.log(btnEnterNode);
+
+btnEnterNode.forEach(e => {
+    e.addEventListener("keypress", (e) => {
+      if(e.key === "Enter")  {
+        e.preventDefault();
+        e.target.click();
+        console.log("körs knappen?");
+      }
+    })
+    
+});
+});
+
 
 
 

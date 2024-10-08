@@ -12,6 +12,8 @@ template.innerHTML = `
     border: 1px solid rgb(5, 5, 5);
     box-shadow: 0px 2px 0px 1px rgba(0, 0, 0, 1);
     margin-top:5px;
+    cursor: pointer;
+    user-select: none;
     
 }
 
@@ -39,6 +41,7 @@ export class ctaButton extends HTMLElement {
         this.attachShadow({mode:'open'})
         // this.getAttribute("text")
         this.getAttribute("href")
+        this.setAttribute("tabindex", "0")
         this.shadowRoot.appendChild(template.content.cloneNode(true))
         
     }
@@ -56,6 +59,8 @@ export class ctaButton extends HTMLElement {
         this.shadowRoot.querySelector('.about__info-box__btn').addEventListener('click', () => {
             if (mailUrl) {
                 window.location.href = "mailto:"+mailUrl;
+                this.setAttribute("role", "link")
+
             }
         });
        }
@@ -66,6 +71,7 @@ export class ctaButton extends HTMLElement {
         this.shadowRoot.querySelector('.about__info-box__btn').addEventListener('click', () => {
             if (url) {
                 window.location.href = url;
+                this.setAttribute("role", "link")
             }
         });
        }

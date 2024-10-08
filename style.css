@@ -19,6 +19,7 @@
   height:100%;
 }
 
+
 .right-nav {
   display: flex;
 }
@@ -46,7 +47,8 @@
 
 
 .main-nav ul li:hover, 
-.main-nav ul li a:active {
+.main-nav ul li a:active,
+.left-nav a:focus {
   color:#D8D8D8;
   background-color: #000; 
 }
@@ -110,6 +112,7 @@
   padding: 3px 20px;
   border: 1px solid rgb(5, 5, 5);
   box-shadow: 0px 2px 0px 1px rgb(0, 0, 0);
+  
 }
 
 .about__box__btn :active {
