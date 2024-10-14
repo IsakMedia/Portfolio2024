@@ -357,13 +357,18 @@ right now it feels like i deconstruct everything ive done, is it even a web-comp
 
 another hard truth is that im not capable of doing a lot of different threads at the same time (even if im bored and its fun). like dont do different branches or do it in another project. because you get so many loose ends. like that nav of yours
 
+14/10
+```https://www.youtube.com/watch?v=UrS61kn4gKI```
+i know it isnt a "source" and that it might be a little bit of a confirmation bias. But it feels nice to know that other people find it complex too, and somewhere in that clip he says that you cant put a component in a component, and that just..
+well anyways, im letting go of it now. ill fix other stuff with vanilla js but dont bother too much about the components anymore. let bygones be bygones. 
+
 ## known bugs
 
 >[!IMPORTANT]
 
 [] links send you straight to target url (should preferably open in new tab. saw somone somewhere say you should mess with default behaviours. though i feel like tab behaviour is more more common now and also "please stay at my site)
 
-[] the  `<cta-button>`  allows for highlighting innerText
+[x] the  `<cta-button>`  allows for highlighting innerText
 [] the  `<cta-button>`  allows to be clicked multiple times in a row spawning possibly more windows than needed
 [] the  `<cta-button>`  does not on hover tell you the location of where the link will take you
 [] it needs to have a pointer on hover too

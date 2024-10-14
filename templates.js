@@ -1,5 +1,5 @@
-export const boxTemp = document.createElement('template');
-        boxTemp.innerHTML=`
+export const boxTemp = document.createElement("template");
+boxTemp.innerHTML = `
                 <div class="about__box">   
                     <slot name="list"></slot>
                     <slot name="cta"></slot>
@@ -8,9 +8,8 @@ export const boxTemp = document.createElement('template');
         
         `;
 
-
-export const textBoxTemp = document.createElement('template');
-        textBoxTemp.innerHTML=`
+export const textBoxTemp = document.createElement("template");
+textBoxTemp.innerHTML = `
                 <div class="about__box">   
                     <slot name="list"></slot>
                     <slot name="cta"></slot>       
@@ -18,19 +17,15 @@ export const textBoxTemp = document.createElement('template');
         
         `;
 
-
-export const imageBoxTemp = document.createElement('template');
-        imageBoxTemp.innerHTML=`  
+export const imageBoxTemp = document.createElement("template");
+imageBoxTemp.innerHTML = `  
                         <div class="about__box">                
-                            <img/>
-                                            
+                            <img/>                      
                         </div>
                         
             `;
 
-          
-
-export const windowTemp = document.createElement('template');
+export const windowTemp = document.createElement("template");
 windowTemp.innerHTML = `
 <style> 
 
@@ -96,23 +91,12 @@ windowTemp.innerHTML = `
                 </a>
 
             </div>  
-
-                
-            
-        
+   
             <div id="conditionalDiv"></div>
             
           
-
-                      
-            
-           
-            
-       
         </div>
     </div>
 
 </div>
 `;
-
-

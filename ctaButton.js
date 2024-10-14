@@ -1,5 +1,4 @@
-
-const template = document.createElement('template');
+const template = document.createElement("template");
 template.innerHTML = `
 <style>
 .about__info-box__btn {
@@ -20,64 +19,89 @@ template.innerHTML = `
 .about__info-box__btn:active {
     box-shadow: inset 0px 2px 0px 1px rgba(0, 0, 0, 0.7);
     font-size: calc(1rem - 2%);
+
+    
 }
 
 .flex {
 display:flex;
 }
 
+
+.disabled {
+color:#595959;
+border: 1px solid #595959;
+}
+
+
 </style>
 
 <div class="flex">
 <div class="about__info-box__btn"><slot></slot></div>
 </div>
+
 `;
 // slot here will allow for parents to se the inner text of the buttons
 
-
 export class ctaButton extends HTMLElement {
-    constructor(){
-        super();
-        this.attachShadow({mode:'open'})
-        // this.getAttribute("text")
-        this.getAttribute("href")
-        this.setAttribute("tabindex", "0")
-        this.shadowRoot.appendChild(template.content.cloneNode(true))
-        
-    }
+  constructor() {
+    super();
+    this.attachShadow({ mode: "open" });
+    // this.getAttribute("text")
+    this.getAttribute("href");
+    this.setAttribute("tabindex", "0");
+    this.shadowRoot.appendChild(template.content.cloneNode(true));
+    this.isClicked = false;
+    this.theBtn = this.shadowRoot.querySelector(".about__info-box__btn");
+  }
 
-    static get observedAttributes(){
-        return ["href", "mailto"]
-    }
+  connectedCallback() {
+    this.theBtn = this.shadowRoot.querySelector(".about__info-box__btn");
+    console.log(this.theBtn);
+  }
 
+  static get observedAttributes() {
+    return ["href", "mailto"];
+  }
 
-    attributeChangedCallback(attribute, oldVal, newVal){
+  attributeChangedCallback(attribute, oldVal, newVal) {
+    if (attribute.toLowerCase() === "mailto") {
+      // give it a role of link
+      this.setAttribute("role", "link");
+      const mailUrl = this.getAttribute("mailto");
+      this.shadowRoot
+        .querySelector(".about__info-box__btn")
+        .addEventListener("click", (e) => {
+          // set isClicked to true, to add disabled effect
+          this.isClicked = true;
+          e.preventDefault(); // this doesnt do anything?
 
-       if(attribute.toLowerCase() === "mailto"){
-       
-        const mailUrl = this.getAttribute('mailto');
-        this.shadowRoot.querySelector('.about__info-box__btn').addEventListener('click', () => {
-            if (mailUrl) {
-                window.location.href = "mailto:"+mailUrl;
-                this.setAttribute("role", "link")
-
-            }
+          if (mailUrl && this.isClicked) {
+            theBtn.classList.add("disabled");
+            // window.location.href = "mailto:" + mailUrl;
+            window.open("mailto:" + mailUrl);
+          }
         });
-       }
 
-       if(attribute.toLowerCase()=== "href") {
-
-        const url = this.getAttribute('href');
-        this.shadowRoot.querySelector('.about__info-box__btn').addEventListener('click', () => {
-            if (url) {
-                window.location.href = url;
-                this.setAttribute("role", "link")
-            }
-        });
-       }
+      this.addEventListener("mouseover", (e) => {
+        const url = this.getAttribute("href");
+        console.log("this is the mouse over for a cta-button");
+      });
     }
 
-
+    if (attribute.toLowerCase() === "href") {
+      this.setAttribute("role", "link");
+      const url = this.getAttribute("href");
+      this.shadowRoot
+        .querySelector(".about__info-box__btn")
+        .addEventListener("click", () => {
+          if (url) {
+            window.location.href = url;
+            this.setAttribute("role", "link");
+          }
+        });
+    }
+  }
 }
 
 customElements.define("cta-button", ctaButton);
