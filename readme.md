@@ -362,6 +362,10 @@ another hard truth is that im not capable of doing a lot of different threads at
 i know it isnt a "source" and that it might be a little bit of a confirmation bias. But it feels nice to know that other people find it complex too, and somewhere in that clip he says that you cant put a component in a component, and that just..
 well anyways, im letting go of it now. ill fix other stuff with vanilla js but dont bother too much about the components anymore. let bygones be bygones. 
 
+to next time: look in script.js for way to give links navigation with click or enter.
+to next time: look in ctaButton and find a way to remove disabled class from button and make it unclickable when its suppose to be.
+to next time: give the hover effect on cta-buttons a way, maybe with a absolute positioned element on the body, to indicate where the link is taking you. and hope people will trust it
+
 ## known bugs
 
 >[!IMPORTANT]

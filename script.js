@@ -35,22 +35,24 @@ ageNumber.innerHTML = `<li>Age: ${setMyAge()}`;
 // EXAMPLE FROM MDN
 // to make buttons enter-able, will go for everything with the role of link
 // will not however work for my close and minimize btns. untested
-const btnsWithLink = document.querySelectorAll('[role="link"]');
+// it breaks my code as of now
 
-for (let i = 0; i < btnsWithLink.length; i++) {
-  btnsWithLink[i].addEventListener("click", navigateLink);
-  btnsWithLink[i].addEventListener("keydown", navigateLink);
-}
+// const btnsWithLink = document.querySelectorAll('[role="link"]');
 
-//handles clicks and keydowns on the link
-function navigateLink(e) {
-  if (e.type === "click" || e.key === "Enter") {
-    const ref = e.target ?? e.srcElement;
-    if (ref) {
-      window.open(ref.getAttribute("data-href"), "_blank");
-    }
-  }
-}
+// for (let i = 0; i < btnsWithLink.length; i++) {
+//   btnsWithLink[i].addEventListener("click", navigateLink);
+//   btnsWithLink[i].addEventListener("keydown", navigateLink);
+// }
+
+// //handles clicks and keydowns on the link
+// function navigateLink(e) {
+//   if (e.type === "click" || e.key === "Enter") {
+//     const ref = e.target ?? e.srcElement;
+//     if (ref) {
+//       window.open(ref.getAttribute("data-href"), "_blank");
+//     }
+//   }
+// }
 
 console.log("Hello and welcome to the console!");
 console.log("Are you just curious, or are you an old classmate maybe?");
