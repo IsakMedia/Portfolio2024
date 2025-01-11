@@ -1,6 +1,6 @@
 
 
-.main .window {
+.window {
 	min-width: 320px;
 	margin: 1rem;
 	background-color: #d8d8d8;
@@ -8,7 +8,7 @@
 	padding-bottom: 10px;
 	filter: drop-shadow(2px 2px #000);
 }
-.main .window .window__header {
+.window .window__header {
 	background-color: #d8d8d8;
 	display: flex;
 	align-items: center;
@@ -16,7 +16,7 @@
 	position: relative;
 	z-index: 99;
 }
-.main .window .window__header h2 {
+.window .window__header h2 {
 	font-size: 1.1rem;
 	font-style: normal;
 	font-stretch: expanded;
@@ -24,7 +24,7 @@
 	padding-block: 10px;
 	margin: 0;
 }
-.main .window .window__header .btn-border-wrapper {
+.window .window__header .btn-border-wrapper {
 	position: relative;
 	display: flex;
 	align-items: center;
@@ -36,7 +36,7 @@
 	box-shadow: -1px -1px 0px 0.1px rgba(81, 81, 81, 0.8),
 		1px 1px 0px 0.1px rgb(255, 255, 255);
 }
-.main .window .window__header .window__header__btn {
+.window .window__header .window__header__btn {
 	background: rgb(255, 255, 255);
 	background: linear-gradient(
 		315deg,
@@ -48,7 +48,7 @@
 	flex: 0 0 auto;
 	position: relative;
 }
-.main .window .window__header .window__header__btn:active {
+.window .window__header .window__header__btn:active {
 	background: rgb(255, 255, 255);
 	background: linear-gradient(
 		315deg,
@@ -56,11 +56,11 @@
 		rgb(237, 237, 237) 100%
 	);
 }
-.main .window .window__header .window__header__btn--close::before {
+.window .window__header .window__header__btn--close::before {
 	content: '';
 	display: inline-block;
 }
-.main .window .window__header .window__header__btn--expand::before {
+.window .window__header .window__header__btn--expand::before {
 	content: '';
 	display: inline-block;
 	position: relative;
@@ -72,14 +72,14 @@
 	box-shadow: -1px -1px 0px 0.1px rgba(81, 81, 81, 0.8),
 		1px 1px 0px 0.1px rgb(255, 255, 255);
 }
-.main .window .window__header .window__header__line-box {
+.window .window__header .window__header__line-box {
 	display: flex;
 	flex: 1;
 	flex-direction: column;
 	width: 100%;
 	margin: 0 5px;
 }
-.main .window .window__header .window__header__line-box .line-box__line {
+.window .window__header .window__header__line-box .line-box__line {
 	flex-shrink: 1;
 	margin: 1px;
 	height: 1px;
@@ -87,7 +87,7 @@
 	background-color: #696969;
 	border-bottom: 1px solid rgb(241, 241, 241);
 }
-.main .window .window__body {
+.window .window__body {
 	display: flex;
 	flex-direction: column;
 	border: 2px solid black;
@@ -101,19 +101,19 @@
 		inset 1px 0px 1px 0px rgba(0, 0, 0, 0.5),
 		inset -1px 0px 1px 0px rgba(0, 0, 0, 0.5);
 }
-.main .window .window__body h3 {
+.window .window__body h3 {
 	font-size: 1.5rem;
 	align-self: center;
 	justify-self: center;
 }
-.main .window .window__body p {
+.window .window__body p {
 	font-size: 1rem;
 	margin: 0;
 	line-height: 1.5rem;
 }
 
 @media (min-width: 600px) {
-	.main .window {
+	.window {
 		margin: 3rem;
 	}
 }

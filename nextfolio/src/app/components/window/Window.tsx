@@ -1,11 +1,14 @@
 import React from 'react'
+import { ReactNode } from 'react'
 import './window.scss'
+import Link from 'next/link'
 
 type WindowProps = {
 	heading: string
+	children: ReactNode
 }
 
-const Window = ({ heading }: WindowProps) => {
+const Window = ({ heading, children }: WindowProps) => {
 	return (
 		<div>
 			<div className='window'>
@@ -42,15 +45,7 @@ const Window = ({ heading }: WindowProps) => {
 					</div>
 				</div>
 
-				<div className='window__body'>
-					<h3>
-						<slot name='subheading'>h3 with slotname 'subheading'</slot>
-					</h3>
-					<slot name='lead'>paragraph with slotname 'lead'</slot>
-					<p>
-						<slot name='paragraph'>paragraph with slotname 'paragraph'</slot>
-					</p>
-				</div>
+				<div className='window__body'>{children}</div>
 			</div>
 		</div>
 	)

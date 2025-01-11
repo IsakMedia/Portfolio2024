@@ -1,23 +1,18 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import './cardbox.scss'
-import CTAbutton from '../CtaButton/CTAbutton'
 
 type Props = {
-	list: string
-	cta: () => void
-	url: string
+	children: ReactNode
+	backgroundColor?: string
 }
 
-const Cardbox = (props: Props) => {
+const Cardbox = ({ children, backgroundColor }: Props) => {
+	const cardStyle = { backgroundColor }
+
 	return (
-		<>
-			<div className='about__box'>
-				<li></li>
-				<div></div>
-				<div></div>
-				<CTAbutton text='hello' href='http://google.com' />
-			</div>
-		</>
+		<div className='about__box' style={cardStyle}>
+			{children}
+		</div>
 	)
 }
 

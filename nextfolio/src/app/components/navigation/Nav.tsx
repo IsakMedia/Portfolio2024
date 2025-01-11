@@ -1,10 +1,36 @@
+'use client'
+
 import React from 'react'
+import { useState, useEffect } from 'react'
 import './nav.scss'
 import Image from 'next/image'
 
 type Props = {}
 
 const Nav = (props: Props) => {
+	const [time, setTime] = useState<string>('')
+
+	useEffect(() => {
+		const displayClock = () => {
+			const date = new Date()
+			return date.toLocaleTimeString('sv-SE', {
+				hour: '2-digit',
+				minute: '2-digit',
+			})
+		}
+
+		// Sätt initial tid
+		setTime(displayClock())
+
+		// Uppdatera tiden varje sekund
+		const interval = setInterval(() => {
+			setTime(displayClock())
+		}, 1000)
+
+		// Rensa intervallet när komponenten avmonteras
+		return () => clearInterval(interval)
+	}, [])
+
 	return (
 		<header>
 			<nav className='main-nav'>
@@ -13,8 +39,8 @@ const Nav = (props: Props) => {
 						<Image
 							alt='github logo'
 							src='/github-mark/github-mark.svg'
-							width={40}
-							height={40}
+							width={35}
+							height={35}
 						/>
 					</a>
 					<ul>
@@ -30,7 +56,7 @@ const Nav = (props: Props) => {
 					</ul>
 				</div>
 				<div className='right-nav'>
-					<span id='clock'>00:00</span>
+					<span id='clock'>{time}</span>
 				</div>
 			</nav>
 		</header>

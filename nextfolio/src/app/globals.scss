@@ -1,0 +1,45 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+@import url('https://fonts.cdnfonts.com/css/chicago-2');
+
+
+
+/* @media (prefers-color-scheme: dark) {} */
+
+/*color VARIABLES */
+/* In .env for you */
+$main-background: #989acd;
+$main-text-color: #171717;
+
+$link-text-color: $main-text-color;
+$link-text-color-active: #3a3a3a;
+
+
+
+body {
+	padding: 0;
+	margin: 0;
+}
+
+
+:root {
+	font-family: 'Chicago', sans-serif;
+	box-sizing: border-box;
+	background-color: $main-background;
+	color: $main-text-color;
+}
+
+:root a {
+	color: $main-text-color;
+}
+:root a:active {
+	color: $link-text-color-active;
+}
+
+.main {
+	position: relative;
+	top: 1rem;
+	width: 100%;
+}
+
