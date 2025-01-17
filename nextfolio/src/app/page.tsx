@@ -34,7 +34,8 @@ export default function Home() {
 				<CTAbutton text='contact' href='mailto:isak.westerberg@gmail.com' />
 			</Window>
 			<Window heading='Quick facts'>
-				<div className='flex'>
+				{/* look into how you can make this cleaner, and only set about__about-container to parent/wrap them in a div, if there are at least one sibling */}
+				<div className='about__about-container'>
 					<Cardbox backgroundColor='#d8d8d8'>
 						<Image
 							alt='image of isak'
@@ -53,6 +54,21 @@ export default function Home() {
 						</ul>
 					</Cardbox>
 				</div>
+			</Window>
+			<Window heading='Quick facts'>
+				<h3>heres some pictures ive made</h3>
+				<Cardbox>
+					<p>this has no siblings but a frame</p>
+				</Cardbox>
+				<Cardbox>
+					<Image
+						src='/test-img.png'
+						width={400}
+						height={400}
+						style={{ objectFit: 'contain' }}
+						alt='bee'
+					/>
+				</Cardbox>
 			</Window>
 		</main>
 	)
