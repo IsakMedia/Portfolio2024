@@ -1,29 +1,29 @@
-'use client'
-
 import Image from 'next/image'
 import Link from 'next/link'
 import Nav from './components/navigation/Nav'
 import Window from './components/window/Window'
 import CTAbutton from './components/CtaButton/CTAbutton'
 import Cardbox from './components/cardbox/Cardbox'
-import { setMyAge } from './utils/helpers'
-import { useState, useEffect } from 'react'
+import { fetchLifeSpan, setMyAge } from './utils/helpers'
 
-export default function Home() {
-	// not sure if you should be called here, but if you want to set age dynamically based on calender year
-	// here you go
-	const [age, setAge] = useState(0)
-
-	useEffect(() => {
-		setAge(setMyAge)
-	}, [age])
+export default async function Home() {
+	const lifedata = await fetchLifeSpan()
+	const lifespan = lifedata.data[0].values[0]
+	const age = setMyAge()
 
 	return (
 		<main className=''>
 			<Nav />
 			<Window heading={'about'}>
 				<h3>feeling curious?</h3>
-				<p>My name is Isak. I'm {age}</p>
+
+				<p>
+					Hello I am Isak and i'm {age}, which means i have about{' '}
+					<span title='https://www.statistikdatabasen.scb.se/pxweb/en/ssd/START__BE__BE0101__BE0101I/LivslangdEttariga/table/tableViewLayout1/'>
+						{lifespan - age}
+					</span>{' '}
+					years left to learn
+				</p>
 				<p>
 					Talk to me professionally about UX design, SCSS, and accessibility,
 					AI, and animation. AR/VR would be super cool to work on someday too.
