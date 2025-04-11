@@ -1,7 +1,5 @@
 // GLOBAL SCRIPTS
 
-import { NextResponse } from 'next/server'
-
 export const setMyAge = () => {
 	const year = new Date()
 	const currentYear = year.getFullYear()
@@ -66,7 +64,3 @@ export const fetchLifeSpan = async () => {
 		return null
 	}
 }
-
-// const data = await fetchLifeSpan()
-// console.log(data)
-// console.log(data.values)

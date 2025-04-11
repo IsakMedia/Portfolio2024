@@ -10,11 +10,11 @@ const Cardbox = ({ children, backgroundColor }: Props) => {
 	const cardStyle = { backgroundColor }
 
 	return (
-		<div className='about__about-container'>
-			<div className='about__box' style={cardStyle}>
-				{children}
-			</div>
+		// <div className='about__about-container'>
+		<div className='about__box' style={cardStyle}>
+			{children}
 		</div>
+		// </div>
 	)
 }
 

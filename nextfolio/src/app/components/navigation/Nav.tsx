@@ -31,6 +31,27 @@ const Nav = (props: Props) => {
 		return () => clearInterval(interval)
 	}, [])
 
+	// new stuff
+	const Navbar = ({
+		windows,
+		openWindow,
+	}: {
+		windows: { id: string; title: string }[]
+		openWindow: (id: string) => void
+	}) => {
+		return (
+			<nav>
+				{windows.map(({ id, title }) => (
+					<button key={id} onClick={() => openWindow(id)}>
+						{title}
+					</button>
+				))}
+			</nav>
+		)
+	}
+
+	// new stuff
+
 	return (
 		<header>
 			<nav className='main-nav'>

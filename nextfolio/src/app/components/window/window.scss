@@ -101,12 +101,28 @@
 		inset 1px 0px 1px 0px rgba(0, 0, 0, 0.5),
 		inset -1px 0px 1px 0px rgba(0, 0, 0, 0.5);
 }
-.window .window__body h3 {
+
+
+
+.window .window__body__children:has(:not(:only-child)):has(:not(p, h1, h2, h3, h4, h5, h6)) {
+	display: flex;
+	gap: 10px;
+	flex-wrap: wrap;
+	width: 60%;
+	margin: 0 auto;
+	color: black;
+	border:1px solid red;
+	}
+
+	
+
+
+.window .window__body__children h3 {
 	font-size: 1.5rem;
 	align-self: center;
 	justify-self: center;
 }
-.window .window__body p {
+.window .window__body__children p {
 	font-size: 1rem;
 	margin: 0;
 	line-height: 1.5rem;
@@ -117,3 +133,5 @@
 		margin: 3rem;
 	}
 }
+
+
