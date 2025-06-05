@@ -96,11 +96,11 @@ const App = ({ age, lifespan }: AProps) => {
 				<Cardbox>
 					<p>this is siblings but in cardbox</p>
 					<Image
-						src='/Aqua.gif'
-						width={400}
-						height={800}
+						src='/flyingcar.png'
+						width={800}
+						height={400}
 						style={{ objectFit: 'contain' }}
-						alt='aquarium gif'
+						alt='photoshop car without wheels'
 					/>
 				</Cardbox>
 				<Cardbox>
