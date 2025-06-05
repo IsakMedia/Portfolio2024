@@ -8,11 +8,18 @@ import Link from 'next/link'
 type WindowProps = {
 	heading: string
 	children: ReactNode
-	onClose: () => void
+	onClose?: () => void
 }
 
+/**
+ * A container window component. Requires `children` and `heading`, `onClose` is optional.
+ * @param heading Window heading
+ * @param children Content inside the window, `<Cardbox>` is recommended but not required
+ * @param onClose a temporary placeholder function for closing windows
+ */
+
 const Window = ({ heading, children, onClose }: WindowProps) => {
-	// fungerar men används ej
+	// works but not in use
 	const handleCloseClick = (e: React.MouseEvent<HTMLButtonElement>) => {
 		const windowEl = e.currentTarget.closest('.window')
 		if (windowEl) {

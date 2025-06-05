@@ -8,6 +8,11 @@ import CTAbutton from './CtaButton/CTAbutton'
 import Cardbox from './cardbox/Cardbox'
 import { useState, useEffect } from 'react'
 
+const defaultImageStyles = {
+	width: 400,
+	height: 'auto',
+}
+
 type AProps = {
 	age: number
 	lifespan: number
@@ -66,13 +71,13 @@ const App = ({ age, lifespan }: AProps) => {
 					<ul>
 						<li>Name: Isak</li>
 						<li>Status: Broke</li>
-						<li>Age:{age}</li>
-						<li>Location:Malmö</li>
+						<li>Age: {age}</li>
+						<li>Location: Malmö</li>
 					</ul>
 				</Cardbox>
 			</Window>
 
-			<Window heading='Quick facts' onClose={() => console.log('hello')}>
+			<Window heading='Test box' onClose={() => console.log('hello')}>
 				<h3>heres some pictures ive made</h3>
 				<p>
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae magni
@@ -90,6 +95,13 @@ const App = ({ age, lifespan }: AProps) => {
 				</p>
 				<Cardbox>
 					<p>this is siblings but in cardbox</p>
+					<Image
+						src='/Aqua.gif'
+						width={400}
+						height={800}
+						style={{ objectFit: 'contain' }}
+						alt='aquarium gif'
+					/>
 				</Cardbox>
 				<Cardbox>
 					<Image
@@ -97,7 +109,17 @@ const App = ({ age, lifespan }: AProps) => {
 						width={400}
 						height={400}
 						style={{ objectFit: 'contain' }}
-						alt='bee'
+						alt='the skynet logo'
+					/>
+				</Cardbox>
+
+				<Cardbox>
+					<Image
+						src='/warzone.jpg'
+						// fill
+						width={400}
+						height={400}
+						alt='photoshop image of a warzone'
 					/>
 				</Cardbox>
 			</Window>
